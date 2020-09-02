@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Tienda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="imagenes/favicon (2).png" type="image/x-icon">
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header_logo">
+        <div class="div_logo"><img class="logo" src="imagenes/undraw_refreshing_beverage_td3r (1).png" alt=""></div>
+        <p class="header_p"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+            Carrito (0) items</p>
+    </header>
+
+    <!-- header -->
+
+    <!-- comienzo imagen -->
+    <section class="imagen">
+        <p class="cabecera_p"></p>
+        <img src="imagenes/vaperurban.png" alt="Portada">
+
+    </section>
+    <!-- fin imagen -->
+
+
+    <!-- inicio contenido principal -->
+    <section class="contenido_principal">
+
+        <!-- inicio bloque aside -->
+        <aside class="aside_principal">
+            <div class="filtros_limpiar">
+                <p><strong>FILTROS</strong></p>
+                <p> <i class="fas fa-trash-alt"></i> Limpiar</p>
+            </div>
+
+            <div>
+
+                <label class="buscador">
+                    <p class="barra_buqueda--p"><strong>BÚSQUEDA </strong></p>
+                    <input type="text" class="barra_Busqueda" name="buequeda" aria-controls="product-list"
+                        placeholder="Buscar productos"> <i class="fa fa-search" aria-hidden="true"></i>
+                </label>
+
+
+                </label>
+                </i>
+                </label>
+            </div>
+            <div class="aside_CATEGOR1">
+                <p class="aside_p1"><strong>CATEGORIA</strong></p>
+                <label for="categoria"></label>
+                <p class="fitro_productos_aside"> <input type="checkbox" name="categoria" id="categoria"> VAPERS
+                </p>
+                <p class="fitro_productos_aside"> <input type="checkbox" name="categoria" id="categoria"> LIQUIDOS</p>
+                <p class="fitro_productos_aside"> <input type="checkbox" name="categoria" id="categoria"> RESISTENCIAS
+                </p>
+                <P class="fitro_productos_aside"><input type="checkbox" name="categoria" id="categoria"> BATERIAS</p>
+                <p class="fitro_productos_aside"> <input type="checkbox" name="categoria" id="categoria"> KIT INICIO</p>
+                </label>
+            </div>
+
+            <div class="aside_puntaje">
+                <P class="aside_p2"><strong>PUNTAJE</strong></P>
+                <p> <label for="puntaje"></label> <input type="checkbox">
+                    <i class="fas fa-star" id="puntaje"></i>
+                    <i class="fas fa-star" id="puntaje"></i>
+                    <i class="fas fa-star" id="puntaje"></i>
+                    <i class="fas fa-star" id="puntaje"></i>
+                    <i class="fas fa-star" id="puntaje"></i>
+                    (5)</label> </p>
+
+                <p> <input type="checkbox">
+                    <label for="puntaje">
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        (4)</label></p>
+
+                <p> <input type="checkbox"> <label for="puntaje">
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        (3)</label> </p>
+
+                <p> <input type="checkbox"> <label for="puntaje">
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="far fa-star " id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        (2)</label> </p>
+
+                <p> <input type="checkbox"> <label for="puntaje">
+                        <i class="fas fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        <i class="far fa-star" id="puntaje"></i>
+                        (1)</label> </p>
+            </div>
+        </aside>
+
+        <!-- fin aside -->
+
+        <!-- inicio barra y tarjetas -->
+        <div class="contenedor_segundo--tarjetas">
+            <div class="barra_principal">
+                <p class="mostrando">Mostrando 12 producto(s)</p>
+                <p class="filtros_barra">Ver como <i class="fa fa-th" aria-hidden="true"> </i>
+                    <i class="fa fa-th-list" aria-hidden="true"></i>
+                </p>
+
+            </div>
+            <div class="contenedor_tarjetas_padre">
+
+                <div class="container_cards">
+
+                    <!-- tarjeta 1 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/li.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>CUTTWOOD e-liquid</h2>
+                                <p class="price">$10.000</p>
+
+                                <span class="estrellas">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- tarjeta 2 -->
+
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto"
+                                    src="imagenes/vapeador-vaper-vaporizador-cigarrillo-elect-rincoe-mechman-D_NQ_NP_996469-MLV32088876269_092019-F.jpg"
+                                    alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Vaper </h2>
+                                <p>$35.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- tarjeta 3 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/ice grape.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Ice Grape </h2>
+                                <p>$17.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- tarjeta 4 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/i stick pico.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Eleaf Istick Pico</h2>
+                                <p>$20.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                    <!-- tarjeta 5 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/vaporesso.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Vaporesso</h2>
+                                <p>$45.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                    <!-- tarjeta 6 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/flecha liquid.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Flecha liquid</h2>
+                                <p>$9.990</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                    <!-- tarjeta 7 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto"
+                                    src="imagenes/vaporizador-istick-pico-bateria-10-esencias-despacho-mt-D_NQ_NP_843936-MLC31211424437_062019-F.jpg"
+                                    alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Bateria samsung</h2>
+                                <p>$10.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                    <!-- tarjeta 8 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/kit inicio.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Vaper kit inicio</h2>
+                                <p>$20.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                    <!-- tarjeta 9 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/images.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Liquid Punch!</h2>
+                                <p>$10.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                     <!-- tarjet 10 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/vaper-smok-v8-kit.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Vaper smok V8</h2>
+                                <p>$25.000</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- tarjeta 11 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/resistenci istick.jpg" alt="" />
+                            </div>
+                            <div class="descipcion_producto">
+                                <h2>Resistencia eleaf I stick pico</h2>
+                                <p>$9.990</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                    <!-- tarjeta 12 -->
+                    <div class="card">
+                        <article class="tarjetas">
+                            <div class="div_imagen_producto">
+                                <img class="producto" src="imagenes/smok-vape-pen-22-coil_esl-01-720x720.jpg" alt="" />
+                            </div>
+
+                            <div class="descipcion_producto">
+                                <h2>Resistencia Smok 8</h2>
+                                <p>$9.990</p>
+
+                                <span>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+
+
+                                <br>
+                                <button class="comprar">Comprar</button>
+
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- fin tarjetas -->
+
+
+    <!-- inicio footer -->
+    <footer class="footer_section">
+        <p class="footer_p">Made with love <i class="fas fa-cat"></i> </p>
+    </footer>
+
+    <!-- fin footer -->
+
+
+
+
+</body>
+
+</html>
