@@ -181,6 +181,8 @@ img{
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding-bottom: 20px;
+  
    
  
 
@@ -196,6 +198,7 @@ img{
      justify-content: center;
      margin: 5px;
     border-radius: 10px;
+    padding: 10px;
   
  
     
@@ -239,6 +242,15 @@ h2 , .price .estrellas{
     border: none;
     margin: 10px;
     color:white;
+}
+
+
+.comprar:hover{
+    background: #fbc02d;
+    color: #212121;
+    box-shadow: 0 0 2px #000
+    
+    
 }
 /* fin tarjetas */
 
