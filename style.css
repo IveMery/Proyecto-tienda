@@ -206,11 +206,11 @@ img{
 
 }
 
-.tarjetas{
+/* .tarjetas{
  background-color: white;
  
 
-}
+} */
 
 .div_imagen_producto{
     width: 300px;
@@ -268,3 +268,9 @@ h2 , .price .estrellas{
 }
 
 /* fin footer */
+
+/* javascript clases */
+
+.hidden {
+    display: none;
+  }
