@@ -14,8 +14,8 @@
     <!-- header -->
     <header class="header_logo">
         <div class="div_logo"><img class="logo" src="imagenes/logo vape.jpg" alt=""></div>
-        <p class="header_p"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-            Carrito (0) items</p>
+        <p class="header_p " ><i class="fa fa-cart-arrow-down  " aria-hidden="true"></i>
+            Carrito (<span class="carrito">0</span>) items</p>
     </header>
 
     <!-- header -->
@@ -36,7 +36,7 @@
         <aside class="aside_principal">
             <div class="filtros_limpiar">
                 <p><strong>FILTROS</strong></p>
-                <p> <i class="fas fa-trash-alt"></i> Limpiar</p>
+                <button > <i class="fas fa-trash-alt"></i> Limpiar</button>
             </div>
 
             <div>
@@ -45,14 +45,15 @@
                     <label>Filtro <input type="text" id="filtro" />
                     </label>
                 </div> -->
-                        <div>
+                       
+                <div>
                 <label class="buscador">
-                    <p class="barra_buqueda--p"><strong>BÚSQUEDA </strong></p>
-
-                    <input type="text"   id="filtrar" class="barra_Busqueda" 
-                        placeholder="Buscar productos"> 
+                    <strong>BÚSQUEDA </strong> </div> </br>
+                     <input type="text"    id="filtrar" class="barra_Busqueda" 
+                        placeholder="Buscar productos" >  <button class="btn_busqueda"><i class="fa fa-search " aria-hidden="true"></i> </button>
+                        
                 </label>
-                <i class="fa fa-search" aria-hidden="true"></i>
+              
                
                     </div>
 
@@ -60,13 +61,15 @@
             <div class="aside_CATEGOR1">
                 <p class="aside_p1"><strong>CATEGORIA</strong></p>
                 <label for="filtroCategoria">
-                <p class="fitro_productos_aside"> <input type="checkbox"  class="filtroCategorias" value="vapers"> Vapers
+
+                    <!-- agregre la clase rewie filter pero tampoco limpia revisar -->
+                <p class="fitro_productos_aside"> <input type="checkbox"  class="filtroCategorias"  class="reestablecer"  value="vapers"> Vapers
                 </p>
-                <p class="fitro_productos_aside"> <input type="checkbox" class="filtroCategorias" value="liquidos"> Liquidos</p>
-                <p class="fitro_productos_aside"> <input type="checkbox"  class="filtroCategorias" value="resistencias"> Resistencias
+                <p class="fitro_productos_aside"> <input type="checkbox" class="filtroCategorias"   class="reestablecer" value="liquidos"> Liquidos</p>
+                <p class="fitro_productos_aside"> <input type="checkbox"  class="filtroCategorias"  class="reestablecer" value="resistencias"> Resistencias
                 </p>
-                <P class="fitro_productos_aside"><input type="checkbox"  class="filtroCategorias" value="baterias"> Baterias</p>
-                <p class="fitro_productos_aside"> <input type="checkbox"  class="filtroCategorias" value="kit"> Kit </p>
+                <P class="fitro_productos_aside"><input type="checkbox"  class="filtroCategorias"  class="reestablecer" value="baterias"> Baterias</p>
+                <p class="fitro_productos_aside"> <input type="checkbox"  class="filtroCategorias"  class="reestablecer" value="kit"> Kit </p>
                 </label>
             </div>
 
@@ -147,7 +150,7 @@
 
 
 
-                      <!-- <article class="product" data-nombre="iphone" data-categoria="celulares" data-precio="22499" data-rating="5"></article> -->
+                      
                     <!-- tarjeta 1 -->
                     <div class="card" >
                         <article class="tarjetas"   data-nombre="cuttwood liquid" data-categoria="liquidos" data-precio="10000" data-rating="3" value="Liquidos">
@@ -409,7 +412,7 @@
 
                     <!-- tarjeta 11 -->
                     <div class="card" >
-                        <article class="tarjetas" data-nombre="Resistencia istick melo" data-categoria="resistencias" data-precio="9990" data-rating="1" value="resistencias">
+                        <article class="tarjetas" data-nombre="resistencia istick melo" data-categoria="resistencias" data-precio="9990" data-rating="1">
                             <div class="div_imagen_producto">
                                 <img class="producto" src="imagenes/resistenci istick.jpg" alt="" />
                             </div>
@@ -434,7 +437,7 @@
                     </div>
                     <!-- tarjeta 12 -->
                     <div class="card" >
-                        <article class="tarjetas" data-nombre="Resistencia smok 8" data-categoria="resistencias"  data-precio="9990" data-rating="3">
+                        <article class="tarjetas" data-nombre="resistencia smok 8" data-categoria= "resistencias"  data-precio="9990" data-rating="3">
                             <div class="div_imagen_producto">
                                 <img class="producto" src="imagenes/smok-vape-pen-22-coil_esl-01-720x720.jpg" alt="" />
                             </div>
@@ -476,6 +479,7 @@
 
     <!-- fin footer -->
 
+<!-- carrito de compra -->
 
 
 <script src="main.js"></script>

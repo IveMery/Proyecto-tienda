@@ -32,6 +32,7 @@ body{
     margin-right: 30px;
     font-size: 20px;
     margin-top: 20px;
+    width: 280px;
 }
 
 /* fin header */
@@ -94,10 +95,25 @@ img{
     margin: 30px 0;
 
 }
-.barra_buqueda--p{
-    margin: 15px 0;
+#filtrar{
+    border-radius: 10px;
+    height: 30px;
+    border: none;
 }
+ .btn_busqueda{
+     height: 30px;
+     width: 30px;
+     border: 1px solid gray;
+ }
 
+button{
+    background:#373F42 ;
+    color: blanchedalmond;
+    height: 30px;
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
 .barra_Busqueda{
 
 
@@ -273,4 +289,19 @@ h2 , .price .estrellas{
 
 .hidden {
     display: none;
+  }
+
+
+.barra_Busqueda{
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.lupa {
+    position: absolute;
+    color: black;
+  margin-top: 5px;
+    left: 160px;
+    font-size: 12px;
   }
