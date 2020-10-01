@@ -1,4 +1,4 @@
-const filtroNombre = document.querySelector('#filtrar')
+const filtroBusqueda = document.querySelector('#filtrar')
 const tarjetas = document.getElementsByClassName('tarjetas')
 const filtroRating = document.getElementsByClassName('review-filter')
 const filtroCategorias = document.getElementsByClassName('filtroCategorias')
@@ -12,7 +12,7 @@ const mostrandoProductosFiltros = document.querySelector('.mostrando')
 
 const contarProductos = (cantidad)=>{
 cantidad =tarjetas.length - cantidad}
-mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjetas.length}`
+mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjeta.length}`
 }*/
 
 // carrito
@@ -78,12 +78,6 @@ const btn_comprar_carrito = document.querySelector('.btn_comprar_carrito')
 const contenedor_principal = document.querySelector('.contenedor_principal')
 const btn_seguir_compra = document.querySelector('.seguir_compra')
 
-// console.log(btn_comprar_carrito)
-// console.log(contenedor_principal)
-// console.log(btn_seguir_compra)
-
-
-
 carroDeComprasbtn.onclick = () => {
   carrito_productos.classList.toggle('ocultar_modal')
 
@@ -124,113 +118,149 @@ const vaciaCarroBtn = document.querySelector('.modal_vaciar_carrito')
 botonVaciarCarro.onclick = () => {
   vaciaCarroBtn.classList.remove('hidden')
   overlay.classList.add('overlay-3')
-
 }
 
-
-//-------------------------------------codigo para checkbox categoria 
-//fitrar por categorias
-
-
-for (let checkbox2 of filtroCategorias) {
-  checkbox2.onclick = () => {
-    filtrarTarjetas2();
-  };
+/*Seccion Filtros*/
+const pasaFiltrosInput = (tarjeta) => {
+  if (hayAlgoEscritoEnElInput()) {
+    if (compararInputConTarjeta(tarjeta)) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  else {
+    return true
+  }
 }
 
-const hayCheckbox2Seleccionado = () => {
+const pasaFiltrosRating = (tarjeta) => {
+  if (hayAlgunCheckBoxChequeado()) {
+    if (compararRatingConTarjeta(tarjeta)) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  else {
+    return true
+  }
+}
+const pasaFiltrosCategoria = (tarjeta) => {
+  if (hayAlguncheckbox2Chequeado()) {
+    if (compararCategoriaConTarjeta(tarjeta)) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+  else {
+    return true
+  }
+}
+const pasaFiltros = (tarjeta) => {
+
+  if (pasaFiltrosInput(tarjeta) && pasaFiltrosRating(tarjeta) && pasaFiltrosCategoria(tarjeta)) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+
+const compararCategoriaConTarjeta = (tarjeta) => {
   for (let checkbox2 of filtroCategorias) {
     if (checkbox2.checked) {
-      return true;
-    }
-  }
-};
-
-const coincidenCheckbox2YTarjeta = tarjeta => {
-  const categor = tarjeta.dataset.categoria;
-  for (let checkbox2 of filtroCategorias) {
-    if (checkbox2.value === categor && checkbox2.checked) {
-      return true;
-    }
-  }
-};
-
-const filtrarTarjetas2 = () => {
-  for (let tarjeta of tarjetas) {
-    tarjeta.classList.add('hidden');
-    if (hayCheckbox2Seleccionado()) {
-      if (coincidenCheckbox2YTarjeta(tarjeta)) {
-        tarjeta.classList.remove('hidden');
+      if (checkbox2.value === tarjeta.dataset.categoria /*|| (checkbox.value === "i")*/) {
+        return true
       }
     }
-    else {
-      tarjeta.classList.remove('hidden')
-    }
   }
-};
-//----------------------------------------------------- Codigo nuevo raiting
-
-// cuando se escriba algo en el input
-filtroNombre.oninput = () => {
-  // recorro una a una cada tarjeta
-  for (let tarjeta of tarjetas) {
-    // me fijo el nombre de la tarjeta y qué buscó el usuario
-    const titulo = tarjeta.dataset.nombre.toLowerCase();
-    const busqueda = filtroNombre.value.toLowerCase();
-    // si el titulo incluye lo que buscó el usuario...
-    if (titulo.includes(busqueda)) {
-      // le quito la clase "hidden" a la tarjeta
-      tarjeta.classList.remove('hidden');
-    } else {
-      // se la agrego
-      tarjeta.classList.add('hidden');
-    }
-  }
-};
-
-for (let checkbox of filtroRating) {
-  checkbox.onclick = () => {
-    filtrarTarjetas();
-  };
+  return false
 }
 
-const hayCheckboxSeleccionado = () => {
+const compararRatingConTarjeta = (tarjeta) => {
   for (let checkbox of filtroRating) {
     if (checkbox.checked) {
-      return true;
-    }
-  }
-};
-
-const coincidenCheckboxYTarjeta = tarjeta => {
-  const rating = tarjeta.dataset.rating;
-  for (let checkbox of filtroRating) {
-    if (checkbox.value === rating && checkbox.checked) {
-      return true;
-    }
-  }
-};
-
-const filtrarTarjetas = () => {
-  for (let tarjeta of tarjetas) {
-    tarjeta.classList.add('hidden');
-    if (hayCheckboxSeleccionado()) {
-      if (coincidenCheckboxYTarjeta(tarjeta)) {
-        tarjeta.classList.remove('hidden');
+      if (checkbox.value === tarjeta.dataset.rating /*|| checkbox.value === "todos"*/) {
+        return true
       }
     }
+  }
+  return false
+}
+
+const ocultarTarjeta = (tarjeta) => {
+  return tarjeta.classList.add("hidden")
+}
+
+const mostrarTarjeta = (tarjeta) => {
+  return tarjeta.classList.remove("hidden")
+}
+const filtrarTarjetas = () => {
+  for (let tarjeta of tarjetas) {
+    if (pasaFiltros(tarjeta)) {
+
+      mostrarTarjeta(tarjeta)
+    }
     else {
-      tarjeta.classList.remove('hidden')
+      ocultarTarjeta(tarjeta)
     }
   }
-};
-
-//reestrablecer
+}
+const compararInputConTarjeta = (tarjeta) => {
+  if (tarjeta.dataset.nombre.includes(filtroBusqueda.value.toLowerCase())) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+const hayAlgunCheckBoxChequeado = () => {
+  for (let checkbox of filtroRating) {
+    if (checkbox.checked) {
+      return true
+    }
+  }
+  return false
+}
+const hayAlguncheckbox2Chequeado = () => {
+  for (let checkbox2 of filtroCategorias) {
+    if (checkbox2.checked) {
+      return true
+    }
+  }
+  return false
+}
+const hayAlgoEscritoEnElInput = () => {
+  if (filtroBusqueda.value) {
+    return true
+  }
+  else {
+    return false
+  }
+}
+filtroBusqueda.oninput = () => {
+  filtrarTarjetas()
+}
+for (let checkbox of filtroRating) {
+  checkbox.oninput = () => {
+    filtrarTarjetas()
+  }
+}
+for (let checkbox2 of filtroCategorias) {
+  checkbox2.oninput = () => {
+    filtrarTarjetas()
+  }
+}
+//Limpiar Filtros
 botonLimpiar.onclick = () => {
-  filtroNombre.value = ""
+  filtroBusqueda.value = ""
   for (let checkbox of checkboxes) {
     checkbox.checked = false
-
     for (let checkbox2 of filtroCategorias) {
       checkbox2.checked = false
       for (let tarjeta of tarjetas) {
@@ -239,10 +269,6 @@ botonLimpiar.onclick = () => {
     }
   }
 };
-
-
-
-//--------------------------------
-
+/************************************* */
 
 

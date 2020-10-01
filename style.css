@@ -7,7 +7,6 @@
 body {
     background-color: #373F42;
     overflow-x: hidden;
-    
 }
 
 /* comienzo header */
@@ -103,16 +102,14 @@ body {
 .botonLimpiar {
     height: 35px;
     width: 80px;
-    border: 1px solid gray;
     border-radius: 10px;
     background: #373F42;
     color: blanchedalmond;
-    outline: none;
+    border: none;
 }
 
 .barra_Busqueda {
     background-color: #e0e8eb;
-    outline: none;
 }
 
 .fa-search {
@@ -255,8 +252,6 @@ h2, .price .estrellas {
 /* css seccion carrito */
 
 /* seccion carrito vacio */
-
-
 
 .contenedor_titulo {
     display: flex;
