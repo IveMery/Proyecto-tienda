@@ -40,24 +40,68 @@ const carroDeComprasbtnVacio = document.querySelector('#btnCarroVacio')
 const carrito_productos = document.querySelector('.carrito_productos')
 const xCerrarCarrito = document.querySelector('.cerrar')
 //vista grid y vita lista
-const productos_contenedor = document.querySelector('.contenedor_tarjetas')
-const vista_grid = document.querySelector('#vista_grid')
-const vista_lista = document.querySelector('#vista_lista')
+const contenedor_tarjetas = document.querySelector('.contenedor_tarjetas')
+const tarjetasProductos = document.querySelectorAll('.tarjetasProductos')
 
-//fin tipo de vista
-//si el carrito esta vacio
+const btnVista_Grid = document.querySelector('#vista_grid')
+const btnVista_Lista = document.querySelector('#vista_lista')
+const infoProductoOcultar = document.querySelectorAll('.infoProductoOcultar')
+console.log(infoProductoOcultar)
+
+
 const body = document.getElementById('body')
 // vista lista
 
-vista_lista.onclick = () => {
-  productos_contenedor.classList.add('productos_en_lista')
+// btnVista_Lista.onclick = () => {
+//   contenedor_tarjetas.classList.add('columna')
 
+
+// }
+// btnVista_Grid.onclick = () => {
+
+//   contenedor_tarjetas.classList.remove('columna')
+
+// }
+
+
+const contenedor_lista = () => {
+  for (let productos of tarjetasProductos) {
+    productos.classList.add('ampliarTarjeta')
+    productos.classList.remove('tarjetasProductos')
+  }
 }
-vista_grid.onclick = () => {
-
-  productos_contenedor.classList.remove('productos_en_lista')
-
+const contenedor_grid = () => {
+  for (let productos of tarjetasProductos) {
+    productos.classList.remove('ampliarTarjeta')
+    productos.classList.add('tarjetasProductos')
+  }
 }
+const vista_lista = () => {
+  contenedor_tarjetas.classList.add('columna')
+  for (let mostrar of infoProductoOcultar) {
+    mostrar.classList.remove('ocultar')
+  }
+}
+const vista_grid = () => {
+  contenedor_tarjetas.classList.remove('columna')
+  for (let mostrar of infoProductoOcultar) {
+    mostrar.classList.add('ocultar')
+  }
+}
+
+btnVista_Lista.onclick = () => {
+  vista_lista()
+  contenedor_lista()
+}
+btnVista_Grid.onclick = () => {
+  vista_grid()
+  contenedor_grid()
+}
+
+
+
+
+
 
 //-------------------------------
 //  const vaciarCarrito = document.querySelector('.btn_vaciar_carrito')

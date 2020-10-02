@@ -180,12 +180,17 @@ body {
     flex-wrap: wrap;
 }
 
-.tarjetas {
+.tarjetasProductos {
     margin: 5px;
     border: 1px solid rgb(243, 240, 240);
     border-radius: 5px 5px 0 0;
     padding: 20px;
-}
+    width: 332px;
+    height: 530px;
+} 
+
+
+
 
 .div_imagen_producto {
     width: 290px;
@@ -304,7 +309,7 @@ h2, .price .estrellas {
 }
 
 .ocultar_modal {
-    transform: translate(400px);
+    transform: translate(450px);
 }
 
 .articulos_anadidos {
@@ -499,7 +504,21 @@ h2, .price .estrellas {
     display: none;
 }
 
-.productos_en_lista {
+.ocultar{
+    display: none;
+}
+
+.ampliarTarjeta{
+    display: flex;
+    margin: 5px;
+    border: 1px solid rgb(243, 240, 240);
+    border-radius: 5px 5px 0 0;
+    padding: 20px;
+    width: 900px;
+    height: auto;
+}
+
+.columna {
     flex-direction: column;
 }
 
