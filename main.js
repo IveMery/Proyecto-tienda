@@ -290,6 +290,7 @@ const hayAlgoEscritoEnElInput = () => {
 }
 filtroBusqueda.oninput = () => {
   filtrarTarjetas()
+  mostrandoCantidadDeProductosFiltrados()
 }
 for (let checkbox of filtroRating) {
   checkbox.oninput = () => {
