@@ -17,8 +17,6 @@ const mostrandoCantidadDeProductosFiltrados = () => {
   mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjetas.length}`
 
 }
-
-
 // carrito
 // anadir Productos al carrito
 const numero = document.querySelector(`#numero`);
@@ -32,14 +30,8 @@ const agregarProductoAlCarrito = () => {
   }
 }
 agregarProductoAlCarrito()
-// carrito vacio
-const carritoVacio = document.querySelector('.carrito_vacio')
+// carrito de compras lateral
 const carroDeComprasbtn = document.querySelector('.carroDecompras')
-const carroDeComprasbtnVacio = document.querySelector('#btnCarroVacio')
-// console.log(carroDeComprasbtnVacio)
-
-
-// carrito con productos barra lateral
 
 const carrito_productos = document.querySelector('.carrito_productos')
 const xCerrarCarrito = document.querySelector('.cerrar')
@@ -47,27 +39,21 @@ const xCerrarCarrito = document.querySelector('.cerrar')
 const contenedor_tarjetas = document.querySelector('.contenedor_tarjetas')
 const tarjetasProductos = document.querySelectorAll('.tarjetasProductos')
 const descripcionProducto = document.querySelectorAll('.descripcion_producto')
-
 const btnVista_Grid = document.querySelector('#vista_grid')
 const btnVista_Lista = document.querySelector('#vista_lista')
 const infoProductoOcultar = document.querySelectorAll('.infoProductoOcultar')
-console.log(descripcionProducto)
-
-
 const body = document.getElementById('body')
-
-
 
 const contenedor_lista = () => {
   for (let productos of tarjetasProductos) {
-    productos.classList.add('ampliarTarjeta')
     productos.classList.remove('tarjetasProductos')
+    productos.classList.add('ampliarTarjeta')
   }
 }
 const contenedor_grid = () => {
   for (let productos of tarjetasProductos) {
-    productos.classList.remove('ampliarTarjeta')
     productos.classList.add('tarjetasProductos')
+    productos.classList.remove('ampliarTarjeta')
   }
 }
 const vista_lista = () => {
@@ -84,24 +70,21 @@ const vista_grid = () => {
 }
 
 btnVista_Lista.onclick = () => {
-  vista_lista()
   contenedor_lista()
-  for( descripcion of descripcionProducto){
+  vista_lista()
+  for (descripcion of descripcionProducto) {
     descripcion.classList.remove('no-center')
   }
+
 }
 btnVista_Grid.onclick = () => {
-  vista_grid()
   contenedor_grid()
-  for( descripcion of descripcionProducto){
+  vista_grid()
+  for (descripcion of descripcionProducto) {
     descripcion.classList.add('no-center')
   }
- 
+
 }
-
-
-
-
 
 
 //-------------------------------
@@ -157,13 +140,18 @@ btn_seguir_compra.onclick = () => {
 }
 // bont vacio con productos
 const botonVaciarCarro = document.querySelector('.btn_vaciar_carrito')
-// console.log(botonVaciarCarro)
 const vaciaCarroBtn = document.querySelector('.modal_vaciar_carrito')
 
 botonVaciarCarro.onclick = () => {
   vaciaCarroBtn.classList.remove('hidden')
   overlay.classList.add('overlay-3')
 }
+
+vaciaCarroBtn.onclick = () => {
+  vaciaCarroBtn.classList.add('hidden')
+  overlay.classList.remove('overlay-3')
+}
+
 
 /*Seccion Filtros*/
 const pasaFiltrosInput = (tarjeta) => {
@@ -216,10 +204,11 @@ const pasaFiltros = (tarjeta) => {
   }
 }
 
+
 const compararCategoriaConTarjeta = (tarjeta) => {
   for (let checkbox2 of filtroCategorias) {
     if (checkbox2.checked) {
-      if (checkbox2.value === tarjeta.dataset.categoria /*|| (checkbox.value === "i")*/) {
+      if (checkbox2.value === tarjeta.dataset.categoria) {
         return true
       }
     }
@@ -230,7 +219,7 @@ const compararCategoriaConTarjeta = (tarjeta) => {
 const compararRatingConTarjeta = (tarjeta) => {
   for (let checkbox of filtroRating) {
     if (checkbox.checked) {
-      if (checkbox.value === tarjeta.dataset.rating /*|| checkbox.value === "todos"*/) {
+      if (checkbox.value === tarjeta.dataset.rating) {
         return true
       }
     }
