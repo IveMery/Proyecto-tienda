@@ -5,15 +5,19 @@ const filtroCategorias = document.getElementsByClassName('filtroCategorias')
 const checkboxes = document.querySelectorAll(".review-filter")
 const botonLimpiar = document.querySelector(".botonLimpiar")
 
-/*-------------- barra item mostras cantidad de productos filtrados
-contar productos en la barra
+/*Mostrar cantidad de productos filtrados en la barra*/
 const mostrandoProductosFiltros = document.querySelector('.mostrando')
+const mostrandoCantidadDeProductosFiltrados = () => {
+  let cantidad = 0
+  for (const tarjeta of tarjetas) {
+    if (pasaFiltros(tarjeta)) {
+      cantidad++
+    }
+  }
+  mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjetas.length}`
 
+}
 
-const contarProductos = (cantidad)=>{
-cantidad =tarjetas.length - cantidad}
-mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjeta.length}`
-}*/
 
 // carrito
 // anadir Productos al carrito
@@ -42,26 +46,16 @@ const xCerrarCarrito = document.querySelector('.cerrar')
 //vista grid y vita lista
 const contenedor_tarjetas = document.querySelector('.contenedor_tarjetas')
 const tarjetasProductos = document.querySelectorAll('.tarjetasProductos')
+const descripcionProducto = document.querySelectorAll('.descripcion_producto')
 
 const btnVista_Grid = document.querySelector('#vista_grid')
 const btnVista_Lista = document.querySelector('#vista_lista')
 const infoProductoOcultar = document.querySelectorAll('.infoProductoOcultar')
-console.log(infoProductoOcultar)
+console.log(descripcionProducto)
 
 
 const body = document.getElementById('body')
-// vista lista
 
-// btnVista_Lista.onclick = () => {
-//   contenedor_tarjetas.classList.add('columna')
-
-
-// }
-// btnVista_Grid.onclick = () => {
-
-//   contenedor_tarjetas.classList.remove('columna')
-
-// }
 
 
 const contenedor_lista = () => {
@@ -92,10 +86,17 @@ const vista_grid = () => {
 btnVista_Lista.onclick = () => {
   vista_lista()
   contenedor_lista()
+  for( descripcion of descripcionProducto){
+    descripcion.classList.remove('no-center')
+  }
 }
 btnVista_Grid.onclick = () => {
   vista_grid()
   contenedor_grid()
+  for( descripcion of descripcionProducto){
+    descripcion.classList.add('no-center')
+  }
+ 
 }
 
 
@@ -293,11 +294,13 @@ filtroBusqueda.oninput = () => {
 for (let checkbox of filtroRating) {
   checkbox.oninput = () => {
     filtrarTarjetas()
+    mostrandoCantidadDeProductosFiltrados()
   }
 }
 for (let checkbox2 of filtroCategorias) {
   checkbox2.oninput = () => {
     filtrarTarjetas()
+    mostrandoCantidadDeProductosFiltrados()
   }
 }
 //Limpiar Filtros
@@ -309,6 +312,7 @@ botonLimpiar.onclick = () => {
       checkbox2.checked = false
       for (let tarjeta of tarjetas) {
         tarjeta.classList.remove('hidden')
+        mostrandoCantidadDeProductosFiltrados()
       }
     }
   }
