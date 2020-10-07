@@ -355,7 +355,7 @@ h2, .price .estrellas {
 /* comienzo checkout de compra final */
 
 .contenedor_principal {
-    width: 47%;
+    width: 850px;
     background: #f6f6f6;
     margin: 50px auto;
     margin-top: 0;
@@ -363,15 +363,18 @@ h2, .price .estrellas {
     flex-wrap: wrap;
     z-index: 4;
     position: absolute;
-    right: 20%;
-    left: 20%;
+    right: 0;
+    left: 0;
     top: 0;
-    bottom: 0;
+    height: 100vh;
+    
+    
 }
 
 .ventana_carrito_compra {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     background: #f6f6f6;
   
@@ -383,7 +386,7 @@ h2, .price .estrellas {
     margin: auto;
     margin-top: 30px;
     padding: 20px;
-    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+    
     border-radius: 5px;
 }
 
@@ -394,8 +397,7 @@ h2, .price .estrellas {
     margin: auto;
     margin-top: 30px;
     padding: 20px;
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
-    background-image: rgba(0, 0, 4, 0.2);
+    background-color: rgb(235, 231, 231);
     border-radius: 5px;
 }
 
@@ -535,15 +537,22 @@ h2, .price .estrellas {
 
 /* media queris */
 
-@media (max-width: 650px) {
+/* @media (max-width: 650px) {
     .carrito_productos {
         max-width: 100%;
         position: fixed;
         padding: 10px;
     }
-}
+} */
 
-@media (max-width: 650px) {
+@media ( max-width: 650px) {
+
+
+    .carrito_productos {
+        max-width: 100%;
+        position: fixed;
+        padding: 10px;
+    }
     .contenedor_principal {
         max-width: 100%;
         position: absolute;
@@ -551,9 +560,13 @@ h2, .price .estrellas {
         left: 0%;
         top: 0%;
         flex-direction: column;
-    }
+        overflow-y: scroll;
+}
+      
+    
     .ventana_carrito_compra {
         flex-direction: column;
+        
     }
     /* .div_resumen_total{
     flex-wrap: wrap;
@@ -562,4 +575,17 @@ h2, .price .estrellas {
     .contenedor_botones_checkout {
         flex-direction: column;
     }
+    .div_resumen_total {
+        max-width: 100%;
+        width: 290px;
+        height: 180px;
+        overflow-y: scroll;
+
+}
+.contenedor_botones_checkout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
 }
