@@ -30,8 +30,8 @@ body {
 }
 
 .carroDecompras {
-    width: 180px;
-    height: 90px;
+    width: 120px;
+    height: 60px;
     background: #373F42;
     color: blanchedalmond;
     border-radius: 10px;
@@ -320,9 +320,8 @@ h2, .price .estrellas {
     top: 0;
     right: 0;
     z-index: 2;
-    transform: translate(0,0);
+    transform: translate(0, 0);
     transition: all 1.5s;
-   
 }
 
 .ocultar_modal {
@@ -333,12 +332,13 @@ h2, .price .estrellas {
     border: 2px rgb(241, 240, 240) solid;
     width: auto;
     margin: 10px;
-    height: 400px;
+    height: 300px;
 }
 
 .btn_comprar_carrito, .btn_vaciar_carrito {
     width: 100%;
     height: 7%;
+    max-height: 10%;
     border-radius: 5px;
     margin: 5px;
 }
@@ -356,6 +356,7 @@ h2, .price .estrellas {
 
 .contenedor_principal {
     width: 850px;
+    max-width: 100%;
     background: #f6f6f6;
     margin: 50px auto;
     margin-top: 0;
@@ -367,8 +368,6 @@ h2, .price .estrellas {
     left: 0;
     top: 0;
     height: 100vh;
-    
-    
 }
 
 .ventana_carrito_compra {
@@ -377,7 +376,6 @@ h2, .price .estrellas {
     align-items: center;
     width: 90%;
     background: #f6f6f6;
-  
 }
 
 .formulario {
@@ -386,7 +384,6 @@ h2, .price .estrellas {
     margin: auto;
     margin-top: 30px;
     padding: 20px;
-    
     border-radius: 5px;
 }
 
@@ -473,6 +470,7 @@ h2, .price .estrellas {
 
 .modal_vaciar_carrito {
     width: 500px;
+    max-width: 100%;
     height: 300px;
     background-color: #fff;
     border-radius: 5px;
@@ -537,17 +535,21 @@ h2, .price .estrellas {
 
 /* media queris */
 
-/* @media (max-width: 650px) {
-    .carrito_productos {
-        max-width: 100%;
-        position: fixed;
-        padding: 10px;
+/*(min-width: 576px) and (max-width: 767.98px)*/
+
+@media (max-width:850px) {
+    .modal_vaciar_carrito {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
     }
-} */
+}
 
 @media ( max-width: 650px) {
-
-
     .carrito_productos {
         max-width: 100%;
         position: fixed;
@@ -561,17 +563,10 @@ h2, .price .estrellas {
         top: 0%;
         flex-direction: column;
         overflow-y: scroll;
-}
-      
-    
+    }
     .ventana_carrito_compra {
         flex-direction: column;
-        
     }
-    /* .div_resumen_total{
-    flex-wrap: wrap;
-    flex-direction: column;
-} */
     .contenedor_botones_checkout {
         flex-direction: column;
     }
@@ -580,12 +575,47 @@ h2, .price .estrellas {
         width: 290px;
         height: 180px;
         overflow-y: scroll;
+    }
+    .contenedor_botones_checkout {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
+@media (max-width: 350px) {
+    .carrito_productos {
+        height: 100%;
+        position: fixed;
+        padding: 10px;
+    }
+    .contenedor_principal {
+        width: 100%;
+        position: fixed;
+        height: 100%;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+   
 }
-.contenedor_botones_checkout{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-    
-}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+
+/*@media (min-width: 1200px) 
+
+/* Large devices (desktops, 992px and up)*/
+
+/*@media (min-width: 992px) and (max-width: 1199.98px) 
+
+/* Medium devices (tablets, 768px and up)*/
+
+/*@media (min-width: 768px) and (max-width: 991.98px) 
+
+/* Small devices (landscape phones, 576px and up)*/
+
+/*@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+/* Extra small devices (portrait phones, less than 576px)*/
+
+/*@media (max-width: 575.98px)
+*/
