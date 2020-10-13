@@ -20,10 +20,10 @@ const mostrandoCantidadDeProductosFiltrados = () => {
 // carrito
 // anadir Productos al carrito
 const numero = document.querySelector(`#numero`);
-const botonComprar = document.querySelectorAll(`#btn_Compra`);
-let cont = 1;
+const btnCompra = document.querySelectorAll(`.btn_Compra`);
+let cont = 2;
 const agregarProductoAlCarrito = () => {
-  for (let compras of btn_Compra) {
+  for (let compras of btnCompra) {
     compras.onclick = () => {
       numero.textContent = cont++;
     }
@@ -32,7 +32,6 @@ const agregarProductoAlCarrito = () => {
 agregarProductoAlCarrito()
 // carrito de compras lateral
 const carroDeComprasbtn = document.querySelector('.carroDecompras')
-
 const carrito_productos = document.querySelector('.carrito_productos')
 const xCerrarCarrito = document.querySelector('.cerrar')
 //vista grid y vita lista
@@ -153,27 +152,27 @@ vaciaCarroBtn.onclick = () => {
 }
 
 /*********************/
- const  btnFiltro = document.getElementById('btnFiltro')
- const asidePrincipal = document.querySelector('.aside_principal')
- const btnCerrarFiltros =document.querySelector('.cerrar_filtros')
- 
- btnFiltro.onclick = ()=>{
-      asidePrincipal.classList.add('mostrarFiltros')
-      overlay.classList.remove('hidden')
-      body.classList.add('no-scroll')
-      console.log('hiceclick')
+const btnFiltro = document.getElementById('btnFiltro')
+const asidePrincipal = document.querySelector('.aside_principal')
+const btnCerrarFiltros = document.querySelector('.cerrar_filtros')
 
- }
- btnCerrarFiltros.onclick= ()=>{
-   asidePrincipal.classList.remove('mostrarFiltros')
-   overlay.classList.add('hidden')
-   body.classList.remove('no-scroll')
- }
+btnFiltro.onclick = () => {
+  asidePrincipal.classList.add('mostrarFiltros')
+  overlay.classList.remove('hidden')
+  body.classList.add('no-scroll')
+  console.log('hiceclick')
+
+}
+btnCerrarFiltros.onclick = () => {
+  asidePrincipal.classList.remove('mostrarFiltros')
+  overlay.classList.add('hidden')
+  body.classList.remove('no-scroll')
+}
 /*fin seccio aside lateral*/
 
 const mostrarSubtotal = document.querySelector("#subtotal")
 const mostrarSubtotalNumero = Number(mostrarSubtotal)
-const metodoDePago = document.querySelectorAll("#metodoPago")
+const metodoDePago = document.querySelectorAll(".metodoPago")
 const parrafoRecargo = document.querySelector("#recargo")
 const parrafoEnvio = document.querySelector("#parrafoEnvio")
 const parrafoDescuento = document.querySelector("#parrafoDescuento")
@@ -183,11 +182,11 @@ const checkboxEnvio = document.querySelector(".checkboxEnvio")
 const checkboxDescuento = document.querySelector(".checkboxdescuento")
 const radioDebito = document.querySelector(".RadioDebito")
 const precio = 5000
-mostrarSubtotal.textContent =`$ ${precio}`
+mostrarSubtotal.textContent = `$ ${precio}`
 
 for (let metodo of metodoDePago) {
   metodo.oninput = () => {
-      obtenerTotal()
+    obtenerTotal()
   }
 }
 //tarjetaCredito
@@ -195,13 +194,13 @@ let recargo
 let descuento
 let envio
 const recargoCredito = () => {
-  recargo = (precio * 10)/100
-  parrafoRecargo.textContent =`$ ${recargo}`
+  recargo = (precio * 10) / 100
+  parrafoRecargo.textContent = `$ ${recargo}`
   return recargo
 }
 //*Tarjeta de descuento//*
 const tarjetaDescuento = () => {
-  descuento =  (precio * 10)/100 
+  descuento = (precio * 10) / 100
   parrafoDescuento.textContent = `$ ${descuento}`
   return descuento
 }
@@ -213,43 +212,43 @@ const necesitaEnvio = () => {
 }
 const obtenerTotal = () => {
   if (radioCredito.checked) {
-      recargo =  recargoCredito()
+    recargo = recargoCredito()
 
   } else {
-      recargo = 0
-      parrafoRecargo.textContent =  recargo
+    recargo = 0
+    parrafoRecargo.textContent = recargo
   }
   if (checkboxEnvio.checked) {
-      envio = necesitaEnvio()
+    envio = necesitaEnvio()
   } else {
-      envio = 0
-      parrafoEnvio.textContent = envio
+    envio = 0
+    parrafoEnvio.textContent = envio
   }
   if (checkboxDescuento.checked) {
-      descuento = tarjetaDescuento()
+    descuento = tarjetaDescuento()
   } else {
-      descuento = 0
-      parrafoDescuento.textContent = descuento
+    descuento = 0
+    parrafoDescuento.textContent = descuento
   }
   let TotalFinalCompra = precio + envio + recargo - descuento
   parrafoTotal.textContent = `$ ${TotalFinalCompra}`
   return TotalFinalCompra
 }
 //mostrar parrafos segun seleccion del usuario
-const textoCredito =document.querySelector('.textotc')
-const textoDescuento =document.querySelector('.textoDescuento')
-const textoEnvio =document.querySelector('.textoEnvio')
-radioDebito.onclick= ()=>{
+const textoCredito = document.querySelector('.textotc')
+const textoDescuento = document.querySelector('.textoDescuento')
+const textoEnvio = document.querySelector('.textoEnvio')
+radioDebito.onclick = () => {
   textoCredito.classList.add('ocultar')
 }
-radioCredito.onclick =()=>{
+radioCredito.onclick = () => {
   textoCredito.classList.remove('ocultar')
 }
 
-checkboxDescuento.onclick=()=>{
+checkboxDescuento.onclick = () => {
   textoDescuento.classList.toggle('ocultar')
 }
-checkboxEnvio.onclick=()=>{
+checkboxEnvio.onclick = () => {
   textoEnvio.classList.toggle('ocultar')
 }
 

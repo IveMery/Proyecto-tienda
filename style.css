@@ -40,7 +40,7 @@ body {
 }
 
 .carroDecompras:hover {
-    background-color: rgb(47, 180, 174);
+    background-color: rgb(196, 195, 166);
     color: #212121;
 }
 
@@ -81,7 +81,6 @@ h1 {
 .aside_principal {
     /* flex-grow: 2; */
     flex: 2;
-    margin: 5px;
     padding: 10px;
     color: white;
 }
@@ -420,7 +419,7 @@ h2, .price .estrellas {
 }
 
 .textotc {
-    color: darkred;
+    color: rgb(230, 71, 71);
 }
 
 .textoDescuento {
@@ -478,14 +477,17 @@ h2, .price .estrellas {
 }
 
 .seguir_compra {
-    background-color: gray;
+    background-color: rgba(204, 204, 204, 0.705);
     color: rgb(41, 41, 48);
     padding: 19px;
     margin: 10px;
-    background-color: white;
     width: 200px;
     border-radius: 5px;
     border: none;
+}
+
+.seguir_compra:active {
+    background-color: rgb(192, 176, 176);
 }
 
 .resumen_carrito {
@@ -494,13 +496,12 @@ h2, .price .estrellas {
     font-size: 20px;
 }
 
-.pagos {
-    margin: 5px;
+.formas_pago {
+    display: block;
+    margin-top: 5px;
 }
 
-/* seccion carrito */
-
-/* modal vaciar carrito */
+/* Modal vaciar carrito */
 
 .modal_vaciar_carrito {
     width: 500px;
@@ -549,7 +550,7 @@ h2, .price .estrellas {
     z-index: 5;
 }
 
-/* javascript clases */
+/*Javascript clases */
 
 .hidden {
     display: none;
@@ -575,11 +576,59 @@ h2, .price .estrellas {
     display: none;
 }
 
-/* media queris */
+.tarjeta_producto_agregado {
+    width: 300px;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px solid rgb(219, 216, 216);
+    padding-top: 5px;
+    margin: 2px;
+    box-sizing: border-box;
+}
 
-/*(min-width: 576px) and (max-width: 767.98px)*/
+.contenedor_img {
+    width: 80px;
+    height: auto;
+    margin: 15px;
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+}
+
+.btn_eliminarproducto {
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    color: red;
+    height: 10px;
+}
+
+.productos_agregados {
+    width: 35px;
+}
+
+.contenido_carrito_descripcion {
+    width: 250px;
+}
+
+.contenedor_titulos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenido_carrito_precio {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Medidas Responsive */
 
 @media (max-width:850px) {
+    .contenedor_principal {
+        overflow-y: scroll;
+    }
     .modal_vaciar_carrito {
         width: 100%;
         height: 100%;
@@ -698,24 +747,3 @@ h2, .price .estrellas {
         overflow-y: scroll;
     }
 }
-
-/* Extra large devices (large desktops, 1200px and up)*/
-
-/*@media (min-width: 1200px) 
-
-/* Large devices (desktops, 992px and up)*/
-
-/*@media (min-width: 992px) and (max-width: 1199.98px) 
-
-/* Medium devices (tablets, 768px and up)*/
-
-/*@media (min-width: 768px) and (max-width: 991.98px) 
-
-/* Small devices (landscape phones, 576px and up)*/
-
-/*@media (min-width: 576px) and (max-width: 767.98px) { ... }
-
-/* Extra small devices (portrait phones, less than 576px)*/
-
-/*@media (max-width: 575.98px)
-*/
