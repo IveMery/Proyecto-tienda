@@ -152,6 +152,106 @@ vaciaCarroBtn.onclick = () => {
   overlay.classList.remove('overlay-3')
 }
 
+/*********************/
+ const  btnFiltro = document.getElementById('btnFiltro')
+ const asidePrincipal = document.querySelector('.aside_principal')
+ const btnCerrarFiltros =document.querySelector('.cerrar_filtros')
+ 
+ btnFiltro.onclick = ()=>{
+      asidePrincipal.classList.add('mostrarFiltros')
+      overlay.classList.remove('hidden')
+      body.classList.add('no-scroll')
+      console.log('hiceclick')
+
+ }
+ btnCerrarFiltros.onclick= ()=>{
+   asidePrincipal.classList.remove('mostrarFiltros')
+   overlay.classList.add('hidden')
+   body.classList.remove('no-scroll')
+ }
+/*fin seccio aside lateral*/
+
+const mostrarSubtotal = document.querySelector("#subtotal")
+const mostrarSubtotalNumero = Number(mostrarSubtotal)
+const metodoDePago = document.querySelectorAll("#metodoPago")
+const parrafoRecargo = document.querySelector("#recargo")
+const parrafoEnvio = document.querySelector("#parrafoEnvio")
+const parrafoDescuento = document.querySelector("#parrafoDescuento")
+const parrafoTotal = document.querySelector("#parrafoTotal")
+const radioCredito = document.querySelector(".radioCredito")
+const checkboxEnvio = document.querySelector(".checkboxEnvio")
+const checkboxDescuento = document.querySelector(".checkboxdescuento")
+const radioDebito = document.querySelector(".RadioDebito")
+const precio = 5000
+mostrarSubtotal.textContent =`$ ${precio}`
+
+for (let metodo of metodoDePago) {
+  metodo.oninput = () => {
+      obtenerTotal()
+  }
+}
+//tarjetaCredito
+let recargo
+let descuento
+let envio
+const recargoCredito = () => {
+  recargo = (precio * 10)/100
+  parrafoRecargo.textContent =`$ ${recargo}`
+  return recargo
+}
+//*Tarjeta de descuento//*
+const tarjetaDescuento = () => {
+  descuento =  (precio * 10)/100 
+  parrafoDescuento.textContent = `$ ${descuento}`
+  return descuento
+}
+//con envio
+const necesitaEnvio = () => {
+  envio = 50
+  parrafoEnvio.textContent = `$ ${envio}`
+  return envio
+}
+const obtenerTotal = () => {
+  if (radioCredito.checked) {
+      recargo =  recargoCredito()
+
+  } else {
+      recargo = 0
+      parrafoRecargo.textContent =  recargo
+  }
+  if (checkboxEnvio.checked) {
+      envio = necesitaEnvio()
+  } else {
+      envio = 0
+      parrafoEnvio.textContent = envio
+  }
+  if (checkboxDescuento.checked) {
+      descuento = tarjetaDescuento()
+  } else {
+      descuento = 0
+      parrafoDescuento.textContent = descuento
+  }
+  let TotalFinalCompra = precio + envio + recargo - descuento
+  parrafoTotal.textContent = `$ ${TotalFinalCompra}`
+  return TotalFinalCompra
+}
+//mostrar parrafos segun seleccion del usuario
+const textoCredito =document.querySelector('.textotc')
+const textoDescuento =document.querySelector('.textoDescuento')
+const textoEnvio =document.querySelector('.textoEnvio')
+radioDebito.onclick= ()=>{
+  textoCredito.classList.add('ocultar')
+}
+radioCredito.onclick =()=>{
+  textoCredito.classList.remove('ocultar')
+}
+
+checkboxDescuento.onclick=()=>{
+  textoDescuento.classList.toggle('ocultar')
+}
+checkboxEnvio.onclick=()=>{
+  textoEnvio.classList.toggle('ocultar')
+}
 
 /*Seccion Filtros*/
 const pasaFiltrosInput = (tarjeta) => {

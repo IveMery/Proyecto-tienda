@@ -31,10 +31,12 @@
 
 
     <!-- inicio contenido principal -->
-    <section class="contenido_principal">
+    <section class="contenido_principal ">
 
         <!-- inicio bloque aside -->
+        <div class="overlay hidden"> </div>
         <aside class="aside_principal">
+            <button class="cerrar_filtros"> <i class="fas fa-times "></i></button>
             <div class="filtros_limpiar">
                 <p class="filtro_titulo"><strong>FILTROS</strong></p>
                 <button class="botonLimpiar"> <i class="fas fa-trash-alt"></i> Limpiar</button>
@@ -140,6 +142,8 @@
                     <button id="vista_grid"><i class="fa fa-th " aria-hidden="true"> </i></button>
                     <button id="vista_lista"><i class="fa fa-th-list " aria-hidden="true"></i></button>
                 </p>
+                <div class="filtro_contenedor "><button class="btnFiltro " id="btnFiltro"><i
+                            class="fas fa-filter "></i></button> Filtros</div>
             </div>
             <main class="contenedor_tarjetas_padre ">
                 <div class="contenedor_tarjetas  ">
@@ -495,34 +499,45 @@
                         placeholder="ej email@vapershop.com" required />
                     <hr class=linea>
                     <h4 class="titulo_pagos">Opciones de Pago</h4>
-                    <label for="formas de pago" class="formas_pago">
-                        <input class="pagos" type="radio" name="pago" /> Efectivo / Débito
+                    <label for="seleccionPago" class="formas_pago">
+                        <input class="pagos RadioDebito" id="metodoPago" type="radio" name="forma-de-pago" /> Efectivo /
+                        Débito
                     </label>
 
                     </br>
                     <label>
-                        <input class="pagos" type="radio" name="pago" /> Tarjeta de crédito
+                        <input class="pagos radioCredito" id="metodoPago" type="radio" name="forma-de-pago" /> Tarjeta
+                        de crédito
                     </label>
                     </br>
                     <label>
-                        <input class="pagos" type="checkbox" />Necesito envío
+                        <input class="pagos checkboxEnvio" id="metodoPago" type="checkbox" name="envio" />Necesito envío
                         </br>
                     </label>
                     <label>
-                        <input class="pagos" type="checkbox" />Tengo tarjeta de descuento
+                        <input class="pagos checkboxdescuento" id="metodoPago" type="checkbox" name="descuento" />Tengo
+                        tarjeta de descuento
                         </br>
                     </label>
-
+                </form>
             </div>
+
             <div class="div_resumen_total">
                 <p class="resumen_carrito" id="resumen_carrito">Resumen</p>
-                <p class="subtotal_carrito" id="subtotal_carrito">Subtotal</p>
-                <p class="total carrito" id="total carrito">Total</p>
+                <div class="seccion_calculos">
+                    <p class="subtotal_carrito "> Subtotal <span class="contenedorDeValores" id=subtotal>$5000</span>
+                    </p>
+                    <p class="textotc ocultar"> Recargo <span class="contenedorDeValores" id="recargo"></span></p>
+                    <p class="textoDescuento ocultar">Descuento 10%<span class="contenedorDeValores" id="parrafoDescuento"></span>
+                    </p>
+                    <p class="textoEnvio ocultar">Envio <span class="contenedorDeValores" id="parrafoEnvio"></span></p>
+                    <p class="total carrito">Total<span class="contenedorDeValores" id="parrafoTotal"> </span> </p>
+                </div>
             </div>
         </div>
         <div class="contenedor_botones_checkout">
             <input type="button" value="Seguir Comprando" class="seguir_compra">
-            <button class="finalizar_compra" type="submit">Finalizar</button>
+            <button class="finalizar_compra" type="submit" form="formulario_checkout">Finalizar</button>
         </div>
 
     </section>

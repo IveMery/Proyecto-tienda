@@ -165,7 +165,7 @@ h1 {
     flex: 8;
 }
 
-#vista_grid, #vista_lista {
+#vista_grid, #vista_lista, .btnFiltro {
     background: none;
     border: none;
     font-size: 25px;
@@ -396,6 +396,40 @@ h2, .price .estrellas {
     padding: 20px;
     background-color: rgb(235, 231, 231);
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.seccion_calculos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+}
+
+.textotc, .textoDescuento, .textoEnvio, .total, .subtotal_carrito {
+    position: relative;
+    margin: 3px;
+}
+
+.total {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.textotc {
+    color: darkred;
+}
+
+.textoDescuento {
+    color: green;
+}
+
+.contenedorDeValores {
+    position: absolute;
+    right: 0px;
 }
 
 .titulo_carrito {
@@ -533,6 +567,14 @@ h2, .price .estrellas {
     overflow: hidden;
 }
 
+.filtro_contenedor {
+    display: none;
+}
+
+.cerrar_filtros {
+    display: none;
+}
+
 /* media queris */
 
 /*(min-width: 576px) and (max-width: 767.98px)*/
@@ -546,6 +588,41 @@ h2, .price .estrellas {
         left: 0;
         top: 0;
         bottom: 0;
+    }
+    .filtro_contenedor {
+        display: block;
+    }
+    .tipo_de_vista {
+        display: none;
+    }
+    .aside_principal {
+        background-color: rgba(37, 36, 36, 0.986);
+        display: block;
+        max-width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        transform: translate(100%);
+        transition: all 1s;
+    }
+    .mostrarFiltros {
+        transform: translate(0.0);
+    }
+    .cerrar_filtros {
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+        margin: 15px;
+        font-size: 25px;
+        background: none;
+        border: none;
+        color: white;
+    }
+    .botonLimpiar {
+        background: none;
     }
 }
 
@@ -581,6 +658,14 @@ h2, .price .estrellas {
         justify-content: center;
         align-items: center;
     }
+    /* .aside_principal{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        overflow-y: scroll;
+ 
+    } */
 }
 
 @media (max-width: 350px) {
@@ -596,7 +681,22 @@ h2, .price .estrellas {
         flex-direction: column;
         overflow-y: scroll;
     }
-   
+    .modal_vaciar_carrito {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .aside_principal {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        overflow-y: scroll;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
