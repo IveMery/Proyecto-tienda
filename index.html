@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Tienda</title>
+    <title>Tienda UrbanShop</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -14,9 +14,9 @@
     <!-- header -->
     <header class="header_logo">
         <div class="div_logo"><img class="logo" src="imagenes/logo vape.jpg" alt="logo de la pagina"></div>
-        <button class="carroDecompras" id="btnCarroVacio" class="header_parrafo "><i class="fa fa-cart-arrow-down  "
-                aria-hidden="true"></i>
-            Carrito <p class="carrito" id="numero"> 2 </p> items</button>
+        <button type="button" aria-label="carrito de compra" class="carroDecompras" id="btnCarroVacio"><i
+                class="fa fa-cart-arrow-down  " aria-hidden="true"></i>
+            Carrito <span class="carrito" id="numero"> 2 </span> items</button>
     </header>
 
     <!-- Comienzo Portada -->
@@ -31,41 +31,45 @@
         <aside class="aside_principal">
             <button class="cerrar_filtros"> <i class="fas fa-times "></i></button>
             <div class="filtros_limpiar">
-                <p class="filtro_titulo"><strong>FILTROS</strong></p>
-                <button class="botonLimpiar"> <i class="fas fa-trash-alt"></i> Limpiar</button>
+                <h2 class="filtro_titulo">FILTROS</h2>
+                <button type="button" aria-label="limpiar-filtros" class="botonLimpiar"> <i
+                        class="fas fa-trash-alt"></i> Limpiar</button>
             </div>
             <div class="div-busqueda">
-                <label class="buscador">
+                <label for="barra-de-busqueda" class="buscador">
                     <strong>BÚSQUEDA </strong> </br>
-
-                    <input type="text" id="filtrar" class="barra_Busqueda" placeholder="Buscar productos"><i
-                        class="fa fa-search " aria-hidden="true"></i>
+                    <input type="text" id="filtrar" id="barra-de-busqueda" class="barra_Busqueda"
+                        placeholder="Buscar productos"><i class="fa fa-search " aria-hidden="true"></i>
                 </label>
             </div>
             <div class="aside_categoria">
-                <p class="aside_p1"><strong>CATEGORIA</strong></p>
-                <label for="filtroCategoria">
-                    <p class="fitro_productos_aside"> <input type="checkbox" class="filtroCategorias" value="vapers">
-                        Vapers
-                    </p>
-                    <p class="fitro_productos_aside"> <input type="checkbox" class="filtroCategorias" value="liquidos">
-                        Liquidos</p>
-                    <p class="fitro_productos_aside"> <input type="checkbox" class="filtroCategorias"
-                            value="resistencias"> Resistencias
-                    </p>
-                    <P class="fitro_productos_aside"><input type="checkbox" class="filtroCategorias" value="baterias">
-                        Baterias</p>
-                    <p class="fitro_productos_aside"> <input type="checkbox" class="filtroCategorias" value="kit"> Kit
-                    </p>
+                <h2 class="aside_p1">CATEGORIA</h2>
+                <label for="vapers">
+                    <input type="checkbox" id="vapers" class="filtroCategorias" value="vapers"> Vapers
+
+                </label>
+                <label for="liquidos-vaper">
+                    <input type="checkbox" class="filtroCategorias" id="liquidos-vaper" value="liquidos"> Liquidos
+                </label>
+                <label for="Resistencias-vaper">
+                    <input type="checkbox" id="resistencias-vaper" class="filtroCategorias" value="resistencias">
+                    Resistencias
+                </label>
+                <label for="baterias-vaper">
+                    <input type="checkbox" class="filtroCategorias" value="baterias"> Baterias
+                </label>
+                <label for="kit-vaper">
+                    <input type="checkbox" class="filtroCategorias" id="kit-vaper" value="kit"> Kit
                 </label>
             </div>
 
             <div class="aside_puntaje">
-                <p class="aside_p2"><strong>PUNTAJE</strong></p>
+                <h2 class="aside_p2">PUNTAJE</h2>
 
-                <label for="puntaje">
+                <label for="cinco-estrellas">
                     <div class="review">
-                        <input type="checkbox" name="review " class="filter review-filter" value="5" id="checkbox-5">
+                        <input type="checkbox" name="review" id="cinco-estrellas" class="filter review-filter" value="5"
+                            id="checkbox-5">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -74,9 +78,10 @@
                         (5)</div>
                 </label>
 
-                <label for="puntaje">
+                <label for="cuatro-estrellas">
                     <div class="review">
-                        <input type="checkbox" name="review " class="filter review-filter" value="4" id="checkbox-4">
+                        <input type="checkbox" name="review" id="cuatro-estrellas" class="filter review-filter"
+                            value="4" id="checkbox-4">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -85,10 +90,10 @@
                         (4)</div>
                 </label>
 
-                <label for="puntaje">
+                <label for="tres-estrellas">
                     <div class="review">
-                        <input type="checkbox" name="review " class="filter review-filter" value="3" id="checkbox-3">
-
+                        <input type="checkbox" name="review" id="tres-estrellas" class="filter review-filter" value="3"
+                            id="checkbox-3">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
@@ -97,9 +102,10 @@
                         (3)</div>
                 </label>
 
-                <label for="puntaje">
+                <label for="dos-estrellas">
                     <div class="review">
-                        <input type="checkbox" name="review " class="filter review-filter" value="2" id="checkbox-2">
+                        <input type="checkbox" name="review" id="dos-estrellas" class="filter review-filter" value="2"
+                            id="checkbox-2">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="far fa-star " aria-hidden="true"></i>
@@ -108,9 +114,10 @@
                         (2)</div>
                 </label>
 
-                <label for="puntaje">
+                <label for="una-estrella">
                     <div class="review">
-                        <input type="checkbox" name="review " class="filter review-filter" value="1" id="checkbox-1">
+                        <input type="checkbox" name="review" id="una-estrella" class="filter review-filter" value="1"
+                            id="checkbox-1">
                         <i class="fas fa-star" aria-hidden="true"></i>
                         <i class="far fa-star" aria-hidden="true"></i>
                         <i class="far fa-star" aria-hidden="true"></i>
@@ -120,313 +127,298 @@
                 </label>
             </div>
         </aside>
-        <!-- fin aside -->
+
         <!-- inicio barra y tarjetas -->
         <div class="contenedor_barra">
             <div class="barra_principal">
                 <p class="mostrando">Mostrando 12 producto(s)</p>
                 <p class="tipo_de_vista">Ver como
-                    <button id="vista_grid"><i class="fa fa-th " aria-hidden="true"> </i></button>
-                    <button id="vista_lista"><i class="fa fa-th-list " aria-hidden="true"></i></button>
+                    <button type="button" aria-label="mostrar productos en columna" id="vista_grid"><i class="fa fa-th "
+                            aria-hidden="true"> </i></button>
+                    <button type="button" aria-label="mostrar porductos en lista" id="vista_lista"><i
+                            class="fa fa-th-list " aria-hidden="true"></i></button>
                 </p>
-                <div class="filtro_contenedor "><button class="btnFiltro " id="btnFiltro"><i
-                            class="fas fa-filter "></i></button> Filtros</div>
+                <div class="filtro_contenedor "><button type="button" aria-label="filtrar productos" class="btnFiltro "
+                        id="btnFiltro"><i class="fas fa-filter "></i></button> Filtros</div>
             </div>
             <main class="contenedor_tarjetas_padre ">
                 <div class="contenedor_tarjetas  ">
                     <!-- tarjeta 1 -->
                     <article class="tarjetas tarjetasProductos" data-id="0" data-nombre="cuttwood liquid"
-                        data-categoria="liquidos" data-precio="10000" data-rating="3" value="Liquidos">
+                        data-categoria="liquidos" data-precio="1000" data-rating="3" value="Liquidos">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/li.jpg" alt="cuttwood liquid" />
+                            <img class="producto" src="imagenes/liquidocuttwood.jpg"
+                                alt="liquido para vaper cuttwood liquid" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Cuttwood liquid</h2>
-                            <p class="precio">$10.000</p>
+                            <h3 class="titulos_productos">Cuttwood liquid</h3>
+                            <p class="precio">$1000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto tres">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 2 -->
-                    <article class="tarjetas tarjetasProductos" data-id="1" data-nombre="vaper" data-categoria="vapers"
-                        data-precio="35000" data-rating="3">
+                    <article class="tarjetas tarjetasProductos" data-id="1" data-nombre="vaper race"
+                        data-categoria="vapers" data-precio="3500" data-rating="3">
                         <div class="div_imagen_producto">
-                            <img class="producto"
-                                src="imagenes/vapeador-vaper-vaporizador-cigarrillo-elect-rincoe-mechman-D_NQ_NP_996469-MLV32088876269_092019-F.jpg"
-                                alt="vaper" />
+                            <img class="producto" src="imagenes/vaperrace.jpg" alt="equipo vaper marca race" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Vaper </h2>
-                            <p>$35.000</p>
+                            <h3 class="titulos_productos">Vaper race </h3>
+                            <p>$3500</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto tres">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 3 -->
                     <article class="tarjetas tarjetasProductos" data-id="2" data-nombre="ice grape"
-                        data-categoria="liquidos" data-precio="17000" data-rating="2">
+                        data-categoria="liquidos" data-precio="2000" data-rating="2">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/ice grape.jpg" alt=" liquid ice grape" />
+                            <img class="producto" src="imagenes/ice grape.jpg"
+                                alt="liquido para vaper sabor ice grape" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Ice Grape </h2>
-                            <p class="precio">$17.000</p>
+                            <h3 class="titulos_productos">Ice Grape </h3>
+                            <p class="precio">$2000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto dos">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
-
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 4 -->
-                    <article class="tarjetas tarjetasProductos" data-id="3" data-nombre="eleaf" data-categoria="vapers"
-                        data-precio="20000" data-rating="1">
+                    <article class="tarjetas tarjetasProductos" data-id="3" data-nombre="eleaf stick pico vaper" data-categoria="vapers"
+                        data-precio="2000" data-rating="1">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/i stick pico.jpg" alt="vaper eleaf I stick pico" />
+                            <img class="producto" src="imagenes/i stick pico.jpg"
+                                alt="equipo completo vaper eleaf I stick pico" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Eleaf Istick Pico</h2>
-                            <p class="precio">$20.000</p>
+                            <h3 class="titulos_productos">Eleaf Istick Pico</h3>
+                            <p class="precio">$2000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto uno">
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                     <!-- tarjeta 5 -->
-                    <article class="tarjetas tarjetasProductos" data-id="4" data-nombre="vaporesso"
-                        data-categoria="vapers" data-precio="45000" data-rating="4">
+                    <article class="tarjetas tarjetasProductos" data-id="4" data-nombre="vaporesso vaper"
+                        data-categoria="vapers" data-precio="3000" data-rating="4">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/vaporesso.jpg" alt=" vaper vaporesso" />
+                            <img class="producto" src="imagenes/vaporesso.jpg" alt="equipo  vaper marca vaporesso" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Vaporesso</h2>
-                            <p class="precio">$45.000</p>
+                            <h3 class="titulos_productos">Vaporesso</h3>
+                            <p class="precio">$3000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto cuatro">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                     <!-- tarjeta 6 -->
                     <article class="tarjetas tarjetasProductos" data-id="5" data-nombre="flecha liquid"
-                        data-categoria="liquidos" data-precio="9990" data-rating="5">
+                        data-categoria="liquidos" data-precio="700" data-rating="5">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/flecha liquid.jpg" alt=" flecha liquid" />
+                            <img class="producto" src="imagenes/flecha liquid.jpg"
+                                alt="liquido para vaper flecha liquid" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Flecha liquid</h2>
-                            <p class="precio">$9.990</p>
+                            <h3 class="titulos_productos">Flecha liquid</h3>
+                            <p class="precio">$700</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto cinco">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                     <!-- tarjeta 7 -->
                     <article class="tarjetas  tarjetasProductos" data-id="6" data-nombre="bateria samsung"
-                        data-categoria="baterias" data-precio="10000" data-rating="5">
+                        data-categoria="baterias" data-precio="1000" data-rating="5">
                         <div class="div_imagen_producto">
                             <img class="producto"
                                 src="imagenes/vaporizador-istick-pico-bateria-10-esencias-despacho-mt-D_NQ_NP_843936-MLC31211424437_062019-F.jpg"
-                                alt=" bateria samsung" />
+                                alt=" bateria para vaper marca samsung" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Bateria samsung</h2>
-                            <p class="precio">$10.000</p>
+                            <h3 class="titulos_productos">Bateria samsung</h3>
+                            <p class="precio">$1000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto cinco">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                     <!-- tarjeta 8 -->
                     <article class="tarjetas  tarjetasProductos" data-id="7" data-nombre="kit inicio"
-                        data-categoria="kit" data-precio="20000" data-rating="3">
+                        data-categoria="kit" data-precio="2500" data-rating="3">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/kit inicio.jpg" alt="kit inicio" />
+                            <img class="producto" src="imagenes/kit inicio.jpg"
+                                alt="kit inicio vaper incluye liquido" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Vaper kit </h2>
-                            <p class="precio">$20.000</p>
+                            <h3 class="titulos_productos">Vaper kit </h3>
+                            <p class="precio">$2500</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto tres">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
-
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                     <!-- tarjeta 9 -->
                     <article class="tarjetas  tarjetasProductos" data-id="8" data-nombre="liquid punch"
-                        data-categoria="liquidos" data-precio="10000" data-rating="5">
+                        data-categoria="liquidos" data-precio="900" data-rating="5">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/images.jpg" alt="liquid punch" />
+                            <img class="producto" src="imagenes/liquidpunch.jpg"
+                                alt="liquido para vaper marca liquid punch" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Liquid Punch!</h2>
-                            <p class="precio">$10.000</p>
+                            <h3 class="titulos_productos">Liquid Punch!</h3>
+                            <p class="precio">$900</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto cinco">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjet 10 -->
                     <article class="tarjetas  tarjetasProductos" data-id="9" data-nombre="vaper smok V8"
-                        data-categoria="vapers" data-precio="25000" data-rating="4">
+                        data-categoria="vapers" data-precio="3000" data-rating="4">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/vaper-smok-v8-kit.jpg" alt="vaper-smok-v8-kit" />
+                            <img class="producto" src="imagenes/vapersmokv8.jpg"
+                                alt=" equipo vaper marca smok v8 kit" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Vaper smok V8</h2>
-                            <p class="precio">$25.000</p>
+                            <h3 class="titulos_productos">Vaper smok V8</h3>
+                            <p class="precio">$3000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto cuatro">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
-
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 11 -->
                     <article class="tarjetas  tarjetasProductos" data-id="10" data-nombre="resistencia istick melo"
-                        data-categoria="resistencias" data-precio="9990" data-rating="1">
+                        data-categoria="resistencias" data-precio="1300" data-rating="1">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/resistenci istick.jpg" alt="Resistencia istick" />
+                            <img class="producto" src="imagenes/resistenciaistick.jpg"
+                                alt="Resistencia para vaper istick" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Resistencia Istick Melo</h2>
-                            <p class="precio">$9.990</p>
+                            <h3 class="titulos_productos">Resistencia Istick Melo</h3>
+                            <p class="precio">$1300</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto uno">
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
-
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
 
                     <!-- tarjeta 12 -->
-                    <article class="tarjetas  tarjetasProductos" data-id="11" data-nombre="resistencia smok 8"
-                        data-categoria="resistencias" data-precio="9990" data-rating="3">
+                    <article class="tarjetas  tarjetasProductos" data-id="11"
+                        data-nombre="resistencia" data-categoria="resistencias" data-precio="1000"
+                        data-rating="3">
                         <div class="div_imagen_producto">
-                            <img class="producto" src="imagenes/smok-vape-pen-22-coil_esl-01-720x720.jpg"
-                                alt="Resistencia smok 8" />
+                            <img class="producto" src="imagenes/resistenciasmok.jpg" alt="Resistencia smok 8" />
                         </div>
                         <div class="descripcion_producto no-center">
-                            <h2>Resistencia Smok 8</h2>
-                            <p class="precio">$9.990</p>
+                            <h3 class="titulos_productos">Resistencia Smok 8</h3>
+                            <p class="precio">$1000</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
-                            <div class="review">
+                            <div class="review" aria-label="puntaje producto tres">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <br>
-                            <button class="comprar btn_Compra">Comprar</button>
-
+                            <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                 </div>
             </main>
         </div>
@@ -435,38 +427,36 @@
     <!-- inicio footer -->
     <footer class="footer_seccion">
         <h4 class="footer_parrafo">Made with love
-            <i class="fas fa-cat"></i> </h4>
+            <i class="fas fa-cat" role="img"></i> </h4>
     </footer>
 
     <!-- comienzo carrito con productos -->
     <div class="overlay hidden"> </div>
-    <section class="carrito_productos  ocultar_modal">
+    <section class="carrito_productos  ocultar_modal" role="dialog">
         <div class="contenedor_titulo">
             <h3>Carrito</h3>
-            <i class="fas fa-times cerrar " id="cerrar"></i>
+            <button type="button" aria-label="cerrar carrito" class="btn_carrito_cerrar"> <i
+                    class="fas fa-times cerrar " id="cerrar"></i>
+            </button>
         </div>
         <p id="parrafo_productos--agregados">2 producto(s) agregado(s)</p>
-
         <div class="articulos_anadidos ">
             <article class="tarjeta_producto_agregado" data-id="2" data-nombre="ice grape">
                 <div class="contenedor_img">
-                    <img class="imagen" src="imagenes/ice grape.jpg" alt=" liquid ice grape" />
+                    <img class="imagen" src="imagenes/ice grape.jpg" alt="liquido para vaper liquid ice grape" />
                 </div>
                 <div class="contenido_carrito_descripcion">
                     <div class="contenedor_titulos">
-                        <h2>Ice Grape </h2> <button class="btn_eliminarproducto"><i
-                                class="far fa-trash-alt"></i></button>
+                        <h2>Ice Grape </h2> <button type="button" aria-label="elimiar producto del carrito"
+                            class="btn_eliminarproducto"><i class="far fa-trash-alt"></i></button>
                     </div>
                     <div>
                         <div class="contenido_carrito_precio">
-                            <label for="cantidad_productos_agregados"> <input class="productos_agregados" type=number
-                                    value="1">
+                            <label for="cantidad_productos_agregados"> <input class="productos_agregados"
+                                    id="cantidad_productos_agregados" type=number value="1">
                                 unidades</label>
-
-                            <p class="precio">$2500</p>
+                            <p class="precio">$2000</p>
                         </div>
-
-
                     </div>
                 </div>
             </article>
@@ -474,50 +464,55 @@
             <article class="tarjeta_producto_agregado" data-id="4" data-nombre="vaporesso" data-categoria="vapers"
                 data-precio="45000" data-rating="4">
                 <div class="contenedor_img">
-                    <img class="imagen" src="imagenes/vaporesso.jpg" alt=" vaper vaporesso" />
+                    <img class="imagen" src="imagenes/vaporesso.jpg" alt="vaper vaporesso" />
                 </div>
                 <div class="contenido_carrito_descripcion">
                     <div class="contenedor_titulos">
                         <h2>Vaporesso</h2>
-                        <button class="btn_eliminarproducto"><i class="far fa-trash-alt"></i></button>
+                        <button type="button" aria-label="elimiar producto del carrito" class="btn_eliminarproducto"><i
+                                class="far fa-trash-alt"></i></button>
                     </div>
                     <div class="contenido_carrito_precio">
-                        <label for="cantidad_productos_agregados"> <input class="productos_agregados" type=number
-                                value="1">
+                        <label for="cantidad_productos_agregados"> <input class="productos_agregados"
+                                id="cantidad_productos_agregados" type=number value="1">
                             unidades</label>
                         <p class="precio">$3000</p>
                     </div>
             </article>
         </div>
         <p class="subtotal_articulos">Subtotal <span class="valor"></span></p>
-        <button class="btn_comprar_carrito">COMPRAR</button>
-        <button class="btn_vaciar_carrito">VACIAR</button>
+        <button type="button" aria-label="boton comprar productos" class="btn_comprar_carrito">COMPRAR</button>
+        <button type="button" aria-label="boton vaciar carrito" class="btn_vaciar_carrito">VACIAR</button>
     </section>
     <!-- ventana de checkout -->
-    <section class="contenedor_principal hidden">
+    <section class="contenedor_principal hidden" role="dialog">
         <div class="ventana_carrito_compra">
             <div class="formulario">
                 <h2 class="titulo_carrito">Checkout</h2>
                 <h3 class="subtitulo_carrito">Datos Personales</h3>
                 <form id="formulario_checkout">
-                    <label for="nombre" class="formulario_label"> Nombre y apellido * </label>
-                    <input class="formulario_input" type="text" name="nombre" id="nombre" placeholder="ej Lalo Landa"
-                        required />
-                    <label for="">Email*</label>
-                    <input class="formulario_input" type="email" name="email" id="email"
-                        placeholder="ej email@vapershop.com" required />
+                    <fieldset>
+                        <legend>
+                            <label for="nombre" class="formulario_label"> Nombre y apellido *
+                                <input class="formulario_input" type="text" name="nombre" id="nombre"
+                                    placeholder="ej Lalo Landa" required /></label>
+                            <label for="email">Email*
+                                <input class="formulario_input" type="email" name="email" id="email"
+                                    placeholder="ej email@vapershop.com" required />
+                            </label>
+                        </legend>
+                    </fieldset>
                     <hr class=linea>
                     <h4 class="titulo_pagos">Opciones de Pago</h4>
-
-                    <label for="seleccionPago" class="formas_pago">
-                        <input class=" RadioDebito metodoPago" type="radio" name="forma-de-pago" /> Efectivo /
+                    <label for="seleccion-pago" class="formas_pago">
+                        <input class=" RadioDebito metodoPago" type="radio" id="seleccion-pago" name="forma-de-pago" />
+                        Efectivo /
                         Débito
                     </label>
                     <label>
                         <input class=" radioCredito metodoPago" type="radio" name="forma-de-pago" />Tarjeta
                         de crédito
                     </label>
-
                     <label class="formas_pago">
                         <input class=" checkboxEnvio metodoPago" type="checkbox" name="envio" />Necesito envío
 
@@ -529,7 +524,6 @@
                     </label>
                 </form>
             </div>
-
             <div class="div_resumen_total">
                 <p class="resumen_carrito" id="resumen_carrito">Resumen</p>
                 <div class="seccion_calculos">
@@ -545,20 +539,19 @@
             </div>
         </div>
         <div class="contenedor_botones_checkout">
-            <input type="button" value="Seguir Comprando" class="seguir_compra">
+            <button type="button" value="Seguir Comprando" class="seguir_compra">Seguir comprando</button>
             <button class="finalizar_compra" type="submit" form="formulario_checkout">Finalizar</button>
         </div>
-
     </section>
-    <!-- fin ventana final -->
+
     <!-- modal confirmacion  vaciar carrito -->
-    <div class="modal_vaciar_carrito hidden">
+    <div class="modal_vaciar_carrito hidden" role="dialog">
         <p class="texto_modal_carrito_vacio">
             Estás por vaciar el carrito, ¿quieres continuar?
         </p>
         <div class="botones_modal">
-            <button class="btn_modal_novaciar ">CANCELAR</button>
-            <button class="btn_modal_vaciar ">VACIAR</button>
+            <button type="button" class="btn_modal_novaciar ">CANCELAR</button>
+            <button type="button" class="btn_modal_vaciar ">VACIAR</button>
         </div>
     </div>
     <script src="main.js"></script>

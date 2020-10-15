@@ -84,20 +84,6 @@ btnVista_Grid.onclick = () => {
   }
 
 }
-
-
-//-------------------------------
-//  const vaciarCarrito = document.querySelector('.btn_vaciar_carrito')
-
-//   vaciarCarrito.onclick =() => {
-//     numero.textContent = cont++
-//   }
-
-//   const sumaryrestar = (strigANUmero0 = 0);
-//    numero.textContent = sumaryrestar
-
-/************************* */
-
 // contenedor checkout modal
 const cerrarCarro = document.querySelector('#cerrar')
 const overlay = document.querySelector('.overlay')
@@ -169,7 +155,6 @@ btnCerrarFiltros.onclick = () => {
   body.classList.remove('no-scroll')
 }
 /*fin seccio aside lateral*/
-
 const mostrarSubtotal = document.querySelector("#subtotal")
 const mostrarSubtotalNumero = Number(mostrarSubtotal)
 const metodoDePago = document.querySelectorAll(".metodoPago")
@@ -294,7 +279,6 @@ const pasaFiltrosCategoria = (tarjeta) => {
   }
 }
 const pasaFiltros = (tarjeta) => {
-
   if (pasaFiltrosInput(tarjeta) && pasaFiltrosRating(tarjeta) && pasaFiltrosCategoria(tarjeta)) {
     return true
   }
@@ -302,8 +286,6 @@ const pasaFiltros = (tarjeta) => {
     return false
   }
 }
-
-
 const compararCategoriaConTarjeta = (tarjeta) => {
   for (let checkbox2 of filtroCategorias) {
     if (checkbox2.checked) {
@@ -406,6 +388,6 @@ botonLimpiar.onclick = () => {
     }
   }
 };
-/************************************* */
+
 
 
