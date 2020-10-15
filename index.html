@@ -29,7 +29,7 @@
         <!-- inicio bloque aside -->
         <div class="overlay hidden"> </div>
         <aside class="aside_principal">
-            <button class="cerrar_filtros"> <i class="fas fa-times "></i></button>
+            <button type="button" aria-label="cerrar filtros" class="cerrar_filtros"> <i class="fas fa-times "></i></button>
             <div class="filtros_limpiar">
                 <h2 class="filtro_titulo">FILTROS</h2>
                 <button type="button" aria-label="limpiar-filtros" class="botonLimpiar"> <i
@@ -52,11 +52,11 @@
                     <input type="checkbox" class="filtroCategorias" id="liquidos-vaper" value="liquidos"> Liquidos
                 </label>
                 <label for="Resistencias-vaper">
-                    <input type="checkbox" id="resistencias-vaper" class="filtroCategorias" value="resistencias">
+                    <input type="checkbox" id="resistencias-vaper" id="Resistencias-vaper" class="filtroCategorias" value="resistencias">
                     Resistencias
                 </label>
                 <label for="baterias-vaper">
-                    <input type="checkbox" class="filtroCategorias" value="baterias"> Baterias
+                    <input type="checkbox" class="filtroCategorias" id="baterias-vaper" value="baterias"> Baterias
                 </label>
                 <label for="kit-vaper">
                     <input type="checkbox" class="filtroCategorias" id="kit-vaper" value="kit"> Kit
@@ -525,7 +525,7 @@
                 </form>
             </div>
             <div class="div_resumen_total">
-                <p class="resumen_carrito" id="resumen_carrito">Resumen</p>
+                <h4 class="resumen_carrito" id="resumen_carrito">Resumen</h4>
                 <div class="seccion_calculos">
                     <p class="subtotal_carrito "> Subtotal <span class="contenedorDeValores" id=subtotal>$5000</span>
                     </p>
