@@ -23,36 +23,38 @@
     <section class="portada">
         <h1>Urban Shop</h1>
     </section>
-    <!-- Fin portada -->
-    <!-- inicio contenido principal -->
+
+    <!-- inicio bloque aside -->
     <section class="contenido_principal ">
-        <!-- inicio bloque aside -->
         <div class="overlay hidden"> </div>
         <aside class="aside_principal">
-            <button type="button" aria-label="cerrar filtros" class="cerrar_filtros"> <i class="fas fa-times "></i></button>
+            <button type="button" aria-label="cerrar filtros" class="cerrar_filtros"> <i
+                    class="fas fa-times "></i></button>
             <div class="filtros_limpiar">
                 <h2 class="filtro_titulo">FILTROS</h2>
                 <button type="button" aria-label="limpiar-filtros" class="botonLimpiar"> <i
                         class="fas fa-trash-alt"></i> Limpiar</button>
             </div>
+
             <div class="div-busqueda">
                 <label for="barra-de-busqueda" class="buscador">
                     <strong>BÚSQUEDA </strong> </br>
                     <input type="text" id="filtrar" id="barra-de-busqueda" class="barra_Busqueda"
-                        placeholder="Buscar productos"><i class="fa fa-search " aria-hidden="true"></i>
+                        placeholder="  Buscar productos"><i class="fa fa-search " aria-hidden="true"></i>
                 </label>
             </div>
+
             <div class="aside_categoria">
                 <h2 class="aside_p1">CATEGORIA</h2>
                 <label for="vapers">
                     <input type="checkbox" id="vapers" class="filtroCategorias" value="vapers"> Vapers
-
                 </label>
                 <label for="liquidos-vaper">
                     <input type="checkbox" class="filtroCategorias" id="liquidos-vaper" value="liquidos"> Liquidos
                 </label>
-                <label for="Resistencias-vaper">
-                    <input type="checkbox" id="resistencias-vaper" id="Resistencias-vaper" class="filtroCategorias" value="resistencias">
+                <label for="resistencias-vaper">
+                    <input type="checkbox" id="resistencias-vaper" id="Resistencias-vaper" class="filtroCategorias"
+                        value="resistencias">
                     Resistencias
                 </label>
                 <label for="baterias-vaper">
@@ -65,7 +67,6 @@
 
             <div class="aside_puntaje">
                 <h2 class="aside_p2">PUNTAJE</h2>
-
                 <label for="cinco-estrellas">
                     <div class="review">
                         <input type="checkbox" name="review" id="cinco-estrellas" class="filter review-filter" value="5"
@@ -212,8 +213,8 @@
                         </div>
                     </article>
                     <!-- tarjeta 4 -->
-                    <article class="tarjetas tarjetasProductos" data-id="3" data-nombre="eleaf stick pico vaper" data-categoria="vapers"
-                        data-precio="2000" data-rating="1">
+                    <article class="tarjetas tarjetasProductos" data-id="3" data-nombre="eleaf stick pico vaper"
+                        data-categoria="vapers" data-precio="2000" data-rating="1">
                         <div class="div_imagen_producto">
                             <img class="producto" src="imagenes/i stick pico.jpg"
                                 alt="equipo completo vaper eleaf I stick pico" />
@@ -395,11 +396,9 @@
                             <button type="button" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
-
                     <!-- tarjeta 12 -->
-                    <article class="tarjetas  tarjetasProductos" data-id="11"
-                        data-nombre="resistencia" data-categoria="resistencias" data-precio="1000"
-                        data-rating="3">
+                    <article class="tarjetas  tarjetasProductos" data-id="11" data-nombre="resistencia"
+                        data-categoria="resistencias" data-precio="1000" data-rating="3">
                         <div class="div_imagen_producto">
                             <img class="producto" src="imagenes/resistenciasmok.jpg" alt="Resistencia smok 8" />
                         </div>
@@ -505,8 +504,7 @@
                     <hr class=linea>
                     <h4 class="titulo_pagos">Opciones de Pago</h4>
                     <label for="seleccion-pago" class="formas_pago">
-                        <input class=" RadioDebito metodoPago" type="radio" id="seleccion-pago" name="forma-de-pago" />
-                        Efectivo /
+                        <input class=" RadioDebito metodoPago" type="radio" id="seleccion-pago" name="forma-de-pago" />Efectivo /
                         Débito
                     </label>
                     <label>
@@ -520,7 +518,6 @@
                     <label class="formas_pago">
                         <input class="checkboxdescuento metodoPago" type="checkbox" name="descuento" />Tengo
                         tarjeta de descuento
-
                     </label>
                 </form>
             </div>
@@ -550,8 +547,8 @@
             Estás por vaciar el carrito, ¿quieres continuar?
         </p>
         <div class="botones_modal">
-            <button type="button" class="btn_modal_novaciar ">CANCELAR</button>
-            <button type="button" class="btn_modal_vaciar ">VACIAR</button>
+            <button type="button" class="btn_modal_novaciar " aria-label="boton no vaciar carrito">CANCELAR</button>
+            <button type="button" class="btn_modal_vaciar " aria-label="boton vaciar carrito">VACIAR</button>
         </div>
     </div>
     <script src="main.js"></script>

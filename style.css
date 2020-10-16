@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -9,7 +10,7 @@ body {
     overflow-x: hidden;
 }
 
-/* comienzo header */
+/* Comienzo header */
 
 .header_logo {
     background-color: white;
@@ -40,13 +41,11 @@ body {
 }
 
 .carroDecompras:hover {
-    background-color: rgb(196, 195, 166);
+    background-color: #fbc02d;
     color: #212121;
 }
 
-/* fin header */
-
-/* seccion portada */
+/* Seccion portada */
 
 .portada {
     max-width: 100%;
@@ -62,11 +61,10 @@ h1 {
     text-align: center;
     color: #fff;
     font-size: 60px;
+    font-family: monstserrat, sans-serif;
 }
 
-/* fin portada */
-
-/* seccion barra principal */
+/* Seccion barra principal */
 
 .barra_principal {
     display: flex;
@@ -74,9 +72,7 @@ h1 {
     background-color: white;
 }
 
-/* fin seccion barra */
-
-/* inicio aside */
+/* Inicio aside */
 
 .aside_principal {
     /* flex-grow: 2; */
@@ -85,7 +81,7 @@ h1 {
     color: white;
 }
 
-/* barra de busqueda  y filtros*/
+/* Barra de busqueda  y filtros*/
 
 .filtros_limpiar {
     margin: 35px 0;
@@ -96,14 +92,15 @@ h1 {
 }
 
 #filtrar {
-    border-radius: 2px;
+    border-radius: 1px;
     height: 30px;
     border: none;
     margin-top: 5px;
+    background-color: #bcbfc0;
+    border-bottom: 2px solid black;
     -webkit-box-shadow: -4px -4px 14px -4px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -4px -4px 14px -4px rgba(0, 0, 0, 0.75);
     box-shadow: -4px -4px 14px -4px rgba(0, 0, 0, 0.75);
-    ;
 }
 
 .botonLimpiar {
@@ -115,12 +112,8 @@ h1 {
     border: none;
 }
 
-.barra_Busqueda {
-    background-color: #e0e8eb;
-}
-
 .fa-search {
-    color: #252222;
+    color: rgb(32, 30, 30);
     position: relative;
     right: 25px;
 }
@@ -158,8 +151,6 @@ h1 {
     display: flex;
     justify-content: space-between;
 }
-
-/* fin aside */
 
 /* inicio tarjetas */
 
@@ -231,7 +222,6 @@ h1 {
     border-radius: 5px 5px 0 0;
     padding: 20px;
     overflow: hidden;
-    /* position: relative; */
 }
 
 .no-center {
@@ -270,9 +260,7 @@ h2, .price .estrellas {
     box-shadow: 0 0 2px #000
 }
 
-/* fin tarjetas */
-
-/* inicio footer */
+/* Inicio footer */
 
 .footer_seccion {
     background-color: white;
@@ -284,26 +272,18 @@ h2, .price .estrellas {
     font-size: 30px;
 }
 
-/* fin footer */
-
-/* css seccion carrito */
-
-/* seccion carrito vacio */
+/* Comienzo modal seccion carrito */
 
 .contenedor_titulo {
     display: flex;
     justify-content: space-between;
-    /* padding: 5%; */
-}
-
-.carrito_vacio--p {
-    margin-top: 10px;
 }
 
 .cerrar {
     font-size: 20px;
 }
-.btn_carrito_cerrar{
+
+.btn_carrito_cerrar {
     background-color: none;
     border: none;
 }
@@ -325,10 +305,6 @@ h2, .price .estrellas {
     top: 0;
     z-index: 3;
 }
-
-
-
-/* comienzo de carro de compras con productos */
 
 .carrito_productos {
     width: 390px;
@@ -354,7 +330,6 @@ h2, .price .estrellas {
     width: auto;
     margin: 10px;
     height: 300px;
-    
 }
 
 .btn_comprar_carrito, .btn_vaciar_carrito {
@@ -370,12 +345,16 @@ h2, .price .estrellas {
     color: blanchedalmond;
 }
 
+.btn_comprar_carrito:active {
+    background-color: #fbc02d;
+    color: black;
+}
+
 .btn_vaciar_carrito {
     background-color: #fff;
 }
 
 /* comienzo checkout de compra final */
-
 
 .contenedor_principal {
     width: 850px;
@@ -383,7 +362,6 @@ h2, .price .estrellas {
     background: #f6f6f6;
     margin: 50px auto;
     margin-top: 0;
-    /* display: none; */
     flex-wrap: wrap;
     z-index: 4;
     position: absolute;
@@ -409,12 +387,15 @@ h2, .price .estrellas {
     padding: 20px;
     border-radius: 5px;
 }
-.subtitulo_carrito{
+
+.subtitulo_carrito {
     margin: 10px 0;
 }
-fieldset{
+
+fieldset {
     border: none;
 }
+
 .div_resumen_total {
     width: 290px;
     height: 480px;
@@ -487,7 +468,7 @@ fieldset{
     margin-right: 40px;
 }
 
-/* botones */
+/* botones checkout */
 
 .finalizar_compra {
     background-color: gray;
@@ -501,7 +482,7 @@ fieldset{
 }
 
 .finalizar_compra:hover {
-    background-color: rgb(146, 146, 37);
+    background-color: #fbc02d;
     color: black;
 }
 
@@ -520,7 +501,6 @@ fieldset{
 }
 
 .resumen_carrito {
-    /* margin-bottom: 425px; */
     font-weight: 900;
     font-size: 20px;
 }
@@ -604,6 +584,8 @@ fieldset{
 .cerrar_filtros {
     display: none;
 }
+
+/*Productos ananidos en el carrito*/
 
 .tarjeta_producto_agregado {
     width: 300px;

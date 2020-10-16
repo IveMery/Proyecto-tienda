@@ -93,8 +93,6 @@ const btn_seguir_compra = document.querySelector('.seguir_compra')
 
 carroDeComprasbtn.onclick = () => {
   carrito_productos.classList.toggle('ocultar_modal')
-
-  // carrito_productos.classList.remove('hidden')
   overlay.classList.remove('hidden')
   body.classList.add('no-scroll')
 }
@@ -103,15 +101,10 @@ cerrarCarro.onclick = () => {
   carrito_productos.classList.toggle('ocultar_modal')
   body.classList.remove('no-scroll')
   overlay.classList.add('hidden')
-
-
-
 }
 
 // abrir modal  al apretar el botoncomprar
-
 btn_comprar_carrito.onclick = () => {
-
   contenedor_principal.classList.remove('hidden')
   overlay.classList.add('overlay-3')
 }
@@ -137,7 +130,7 @@ vaciaCarroBtn.onclick = () => {
   overlay.classList.remove('overlay-3')
 }
 
-/*********************/
+//Inicio seccion aside lateral responsive
 const btnFiltro = document.getElementById('btnFiltro')
 const asidePrincipal = document.querySelector('.aside_principal')
 const btnCerrarFiltros = document.querySelector('.cerrar_filtros')
@@ -146,15 +139,13 @@ btnFiltro.onclick = () => {
   asidePrincipal.classList.add('mostrarFiltros')
   overlay.classList.remove('hidden')
   body.classList.add('no-scroll')
-  console.log('hiceclick')
-
 }
 btnCerrarFiltros.onclick = () => {
   asidePrincipal.classList.remove('mostrarFiltros')
   overlay.classList.add('hidden')
   body.classList.remove('no-scroll')
 }
-/*fin seccio aside lateral*/
+//Calculo modal checkout
 const mostrarSubtotal = document.querySelector("#subtotal")
 const mostrarSubtotalNumero = Number(mostrarSubtotal)
 const metodoDePago = document.querySelectorAll(".metodoPago")
@@ -183,13 +174,13 @@ const recargoCredito = () => {
   parrafoRecargo.textContent = `$ ${recargo}`
   return recargo
 }
-//*Tarjeta de descuento//*
+//Tarjeta de descuento
 const tarjetaDescuento = () => {
   descuento = (precio * 10) / 100
   parrafoDescuento.textContent = `$ ${descuento}`
   return descuento
 }
-//con envio
+//Gasto ennvio
 const necesitaEnvio = () => {
   envio = 50
   parrafoEnvio.textContent = `$ ${envio}`
