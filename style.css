@@ -211,6 +211,10 @@ h1 {
     height: auto;
 }
 
+.ocultar {
+    display: none;
+}
+
 .titulos_productos {
     margin: 10px 0;
 }
@@ -281,6 +285,7 @@ h2, .price .estrellas {
 
 .cerrar {
     font-size: 20px;
+    background-color: white;
 }
 
 .btn_carrito_cerrar {
@@ -290,9 +295,9 @@ h2, .price .estrellas {
 
 .overlay {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 1;
 }
@@ -565,10 +570,6 @@ fieldset {
     display: none;
 }
 
-.ocultar {
-    display: none;
-}
-
 .columna {
     flex-direction: column;
 }
@@ -718,14 +719,6 @@ fieldset {
         justify-content: center;
         align-items: center;
     }
-    /* .aside_principal{
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        overflow-y: scroll;
- 
-    } */
 }
 
 @media (max-width: 350px) {

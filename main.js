@@ -1,10 +1,3 @@
-const filtroBusqueda = document.querySelector('#filtrar')
-const tarjetas = document.getElementsByClassName('tarjetas')
-const filtroRating = document.getElementsByClassName('review-filter')
-const filtroCategorias = document.getElementsByClassName('filtroCategorias')
-const checkboxes = document.querySelectorAll(".review-filter")
-const botonLimpiar = document.querySelector(".botonLimpiar")
-
 /*Mostrar cantidad de productos filtrados en la barra*/
 const mostrandoProductosFiltros = document.querySelector('.mostrando')
 const mostrandoCantidadDeProductosFiltrados = () => {
@@ -15,10 +8,9 @@ const mostrandoCantidadDeProductosFiltrados = () => {
     }
   }
   mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjetas.length}`
-
 }
-// carrito
-// anadir Productos al carrito
+
+// anadir Productos al carrito se modifica el numero
 const numero = document.querySelector(`#numero`);
 const btnCompra = document.querySelectorAll(`.btn_Compra`);
 let cont = 2;
@@ -30,11 +22,8 @@ const agregarProductoAlCarrito = () => {
   }
 }
 agregarProductoAlCarrito()
-// carrito de compras lateral
-const carroDeComprasbtn = document.querySelector('.carroDecompras')
-const carrito_productos = document.querySelector('.carrito_productos')
-const xCerrarCarrito = document.querySelector('.cerrar')
-//vista grid y vita lista
+
+// variables vista grid y vita lista
 const contenedor_tarjetas = document.querySelector('.contenedor_tarjetas')
 const tarjetasProductos = document.querySelectorAll('.tarjetasProductos')
 const descripcionProducto = document.querySelectorAll('.descripcion_producto')
@@ -43,6 +32,7 @@ const btnVista_Lista = document.querySelector('#vista_lista')
 const infoProductoOcultar = document.querySelectorAll('.infoProductoOcultar')
 const body = document.getElementById('body')
 
+//funcion vista grid y vista lista
 const contenedor_lista = () => {
   for (let productos of tarjetasProductos) {
     productos.classList.remove('tarjetasProductos')
@@ -60,30 +50,34 @@ const vista_lista = () => {
   for (let mostrar of infoProductoOcultar) {
     mostrar.classList.remove('ocultar')
   }
+  for (descripcion of descripcionProducto) {
+    descripcion.classList.remove('no-center')
+  }
 }
 const vista_grid = () => {
   contenedor_tarjetas.classList.remove('columna')
   for (let mostrar of infoProductoOcultar) {
     mostrar.classList.add('ocultar')
   }
+  for (descripcion of descripcionProducto) {
+    descripcion.classList.add('no-center')
+  }
 }
 
 btnVista_Lista.onclick = () => {
   contenedor_lista()
   vista_lista()
-  for (descripcion of descripcionProducto) {
-    descripcion.classList.remove('no-center')
-  }
-
 }
+
 btnVista_Grid.onclick = () => {
   contenedor_grid()
   vista_grid()
-  for (descripcion of descripcionProducto) {
-    descripcion.classList.add('no-center')
-  }
-
 }
+
+// carrito de compras lateral
+const carroDeComprasbtn = document.querySelector('.carroDecompras')
+const carrito_productos = document.querySelector('.carrito_productos')
+const xCerrarCarrito = document.querySelector('.cerrar')
 // contenedor checkout modal
 const cerrarCarro = document.querySelector('#cerrar')
 const overlay = document.querySelector('.overlay')
@@ -103,7 +97,7 @@ cerrarCarro.onclick = () => {
   overlay.classList.add('hidden')
 }
 
-// abrir modal  al apretar el botoncomprar
+// abrir modal checkout  al apretar el botoncomprar
 btn_comprar_carrito.onclick = () => {
   contenedor_principal.classList.remove('hidden')
   overlay.classList.add('overlay-3')
@@ -116,7 +110,7 @@ btn_seguir_compra.onclick = () => {
   overlay.classList.remove('overlay-3')
   body.classList.remove('no-scroll')
 }
-// bont vacio con productos
+//modal vaciar carrito
 const botonVaciarCarro = document.querySelector('.btn_vaciar_carrito')
 const vaciaCarroBtn = document.querySelector('.modal_vaciar_carrito')
 
@@ -165,10 +159,11 @@ for (let metodo of metodoDePago) {
     obtenerTotal()
   }
 }
-//tarjetaCredito
+
 let recargo
 let descuento
 let envio
+//tarjetaCredito
 const recargoCredito = () => {
   recargo = (precio * 10) / 100
   parrafoRecargo.textContent = `$ ${recargo}`
@@ -210,7 +205,7 @@ const obtenerTotal = () => {
   parrafoTotal.textContent = `$ ${TotalFinalCompra}`
   return TotalFinalCompra
 }
-//mostrar parrafos segun seleccion del usuario
+//Mostrar parrafos segun seleccion del usuario en el modal checkout
 const textoCredito = document.querySelector('.textotc')
 const textoDescuento = document.querySelector('.textoDescuento')
 const textoEnvio = document.querySelector('.textoEnvio')
@@ -228,7 +223,14 @@ checkboxEnvio.onclick = () => {
   textoEnvio.classList.toggle('ocultar')
 }
 
-/*Seccion Filtros*/
+//Variables y funciones seccion Filtros
+const filtroBusqueda = document.querySelector('#filtrar')
+const tarjetas = document.getElementsByClassName('tarjetas')
+const filtroRating = document.getElementsByClassName('review-filter')
+const filtroCategorias = document.getElementsByClassName('filtroCategorias')
+const checkboxes = document.querySelectorAll(".review-filter")
+const botonLimpiar = document.querySelector(".botonLimpiar")
+
 const pasaFiltrosInput = (tarjeta) => {
   if (hayAlgoEscritoEnElInput()) {
     if (compararInputConTarjeta(tarjeta)) {
@@ -365,7 +367,7 @@ for (let checkbox2 of filtroCategorias) {
     mostrandoCantidadDeProductosFiltrados()
   }
 }
-//Limpiar Filtros
+//Boton limpiar Filtros
 botonLimpiar.onclick = () => {
   filtroBusqueda.value = ""
   for (let checkbox of checkboxes) {
