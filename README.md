@@ -1,7 +1,5 @@
 # Proyecto-tienda
 
-# Proyecto-tienda
-
 ## Página UbanShop
 Esta es una página creada para el segundo proyecto Ada .En este proyecto utilizamos:
 
