@@ -95,6 +95,11 @@ cerrarCarro.onclick = () => {
   carrito_productos.classList.toggle('ocultar_modal')
   body.classList.remove('no-scroll')
   overlay.classList.add('hidden')
+  limpiarCarrito.classList.remove('hidden')
+  parrafoCarrito.textContent = '2 producto(s) agregado(s)'
+  btn_comprar_carrito.classList.remove('hidden')
+  botonVaciarCarro.classList.remove('hidden')
+  subtotalArticulosCarrito.classList.remove('hidden')
 }
 
 // abrir modal checkout  al apretar el botoncomprar
@@ -112,15 +117,30 @@ btn_seguir_compra.onclick = () => {
 }
 //modal vaciar carrito
 const botonVaciarCarro = document.querySelector('.btn_vaciar_carrito')
-const vaciaCarroBtn = document.querySelector('.modal_vaciar_carrito')
+const vaciaCarroModal = document.querySelector('.modal_vaciar_carrito')
+const limpiarCarrito = document.querySelector('.articulos_anadidos')
+const parrafoCarrito = document.querySelector('#parrafo_productos--agregados')
+const subtotalArticulosCarrito = document.querySelector('.subtotal_articulos')
+const cancelarVaciarCarrito = document.querySelector('#btnCancelar')
+const vaciarBotonModalFinal = document.querySelector('#btnvaciarCarritoModalFinal')
 
 botonVaciarCarro.onclick = () => {
-  vaciaCarroBtn.classList.remove('hidden')
+  vaciaCarroModal.classList.remove('hidden')
   overlay.classList.add('overlay-3')
 }
 
-vaciaCarroBtn.onclick = () => {
-  vaciaCarroBtn.classList.add('hidden')
+vaciarBotonModalFinal.onclick = () => {
+  vaciaCarroModal.classList.add('hidden')
+  overlay.classList.remove('overlay-3')
+  limpiarCarrito.classList.add('hidden')
+  parrafoCarrito.textContent = 'No tienes productos en el carrito, ¡agrega algunos!'
+  btn_comprar_carrito.classList.add('hidden')
+  botonVaciarCarro.classList.add('hidden')
+  subtotalArticulosCarrito.classList.add('hidden')
+}
+
+cancelarVaciarCarrito.onclick = () => {
+  vaciaCarroModal.classList.add('hidden')
   overlay.classList.remove('overlay-3')
 }
 
