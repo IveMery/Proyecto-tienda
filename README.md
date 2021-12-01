@@ -1,6 +1,6 @@
 # Proyecto-tienda
 
-## Página UbanShop
+## Página UrbanShop
 Esta es una página creada para el segundo proyecto Ada .En este proyecto utilizamos:
 
 1.Html                                                    
@@ -8,7 +8,7 @@ Esta es una página creada para el segundo proyecto Ada .En este proyecto utiliz
 3.Javascript                                            
 4.Deployado con netlify            
 
-Además agregamos accesibilidad ,la idea era replicar el diseño de una tienda de comercio electronico [Proyecto: Tienda](https://frontend-proyecto-tienda-actualizado.netlify.app/) el sitio sera responsivo y con algunas funcionalidades para hacerlo mas interactivo.
+Además agregamos accesibilidad ,la idea era replicar el diseño de una tienda de comercio electrónico [Proyecto: Tienda](https://frontend-proyecto-tienda-actualizado.netlify.app/) el sitio sera responsivo y con algunas funcionalidades para hacerlo mas interactivo.
 
 Recursos utilizados
 

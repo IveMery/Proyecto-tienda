@@ -16,7 +16,7 @@
         <div class="div_logo"><img class="logo" src="imagenes/logo vape.jpg" alt="logo de la pagina"></div>
         <button type="button" aria-label="carrito de compra" class="carroDecompras" id="btnCarroVacio"><i
                 class="fa fa-cart-arrow-down  " aria-hidden="true"></i>
-            Carrito <span class="carrito" id="numero"> 2 </span> items</button>
+            Carrito <span class="carrito" id="numero"> 0 </span> items</button>
     </header>
 
     <!-- Comienzo Portada -->
@@ -39,7 +39,7 @@
             <div class="div-busqueda">
                 <label for="barra-de-busqueda" class="buscador">
                     <strong>BÚSQUEDA </strong> </br>
-                    <input type="text" id="filtrar" id="barra-de-busqueda" class="barra_Busqueda"
+                    <input type="text" id="filtrar" id="barra-de-busqueda" class="barra_busqueda"
                         placeholder="Buscar productos"><i class="fa fa-search " aria-hidden="true"></i>
                 </label>
             </div>
@@ -142,8 +142,8 @@
                 <div class="filtro_contenedor "><button type="button" aria-label="filtrar productos" class="btnFiltro "
                         id="btnFiltro"><i class="fas fa-filter "></i></button> Filtros</div>
             </div>
-            <main class="contenedor_tarjetas_padre ">
-                <div class="contenedor_tarjetas  ">
+            <main class="contenedor_tarjetas_padre">
+                <div class="contenedor_tarjetas">
                     <!-- tarjeta 1 -->
                     <article class="tarjetas tarjetasProductos" data-id="0" data-nombre="cuttwood liquid"
                         data-categoria="liquidos" data-precio="1000" data-rating="3" value="Liquidos">
@@ -164,7 +164,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Cuttwood liquid" data-precio="1000"
+                                data-img="imagenes/liquidocuttwood.jpg" data-id="0" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 2 -->
@@ -175,7 +176,7 @@
                         </div>
                         <div class="descripcion_producto no-center">
                             <h3 class="titulos_productos">Vaper race </h3>
-                            <p>$3500</p>
+                            <p class="precio">$3500</p>
                             <p class="infoProductoOcultar ocultar">Lorem ipsum dolor sit amet consectetur adipisicing
                                 elit. Fugiat facere non eius
                                 tempora perspiciatis ratione! Eaque atque debitis deserunt suscipit?</p>
@@ -186,7 +187,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Vaper race"  data-id="1" data-precio="3500"
+                                data-img="imagenes/vaperrace.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 3 -->
@@ -209,7 +211,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Ice Grape" data-id="2" data-precio="2000"
+                                data-img="imagenes/ice grape.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 4 -->
@@ -232,7 +235,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-id="3" data-nombres="Eleaf Istick Pico" data-precio="2000"
+                                data-img="imagenes/i stick pico.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 5 -->
@@ -254,7 +258,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Vaporesso"  data-id="4" data-precio="3000"
+                                data-img="imagenes/vaporesso.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 6 -->
@@ -277,7 +282,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Flecha liquid"  data-id="5"  data-precio="700"
+                                data-img="imagenes/flecha liquid.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 7 -->
@@ -301,7 +307,9 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Bateria samsung" data-id="6"  data-precio="1000"
+                                data-img="imagenes/vaporizador-istick-pico-bateria-10-esencias-despacho-mt-D_NQ_NP_843936-MLC31211424437_062019-F.jpg"
+                                class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 8 -->
@@ -324,7 +332,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Vaper kit" data-id="7" data-precio="2500"
+                                data-img="imagenes/kit inicio.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 9 -->
@@ -347,7 +356,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Liquid Punch!"  data-id="8" data-precio="900"
+                                data-img="imagenes/liquidpunch.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjet 10 -->
@@ -370,7 +380,8 @@
                                 <i class="fas fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Vaper smok V8"  data-id="9" data-precio="3000"
+                                data-img="imagenes/vapersmokv8.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 11 -->
@@ -393,7 +404,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" class="comprar btn_Compra" data-id="10" data-nombres="Resistencia Istick Melo"
+                                data-precio="1300" data-img="imagenes/resistenciaistick.jpg">Comprar</button>
                         </div>
                     </article>
                     <!-- tarjeta 12 -->
@@ -415,7 +427,8 @@
                                 <i class="far fa-star"></i>
                                 <i class="far fa-star"></i>
                             </div>
-                            <button type="button" class="comprar btn_Compra">Comprar</button>
+                            <button type="button" data-nombres="Resistencia Smok 8" data-id="11" data-precio="1000"
+                                data-img="imagenes/resistenciasmok.jpg" class="comprar btn_Compra">Comprar</button>
                         </div>
                     </article>
                 </div>
@@ -426,7 +439,7 @@
     <!-- inicio footer -->
     <footer class="footer_seccion">
         <h4 class="footer_parrafo">Gracias por visitarnos
-            <i class="fas fa-cat" role="img" ></i>
+            <i class="fas fa-cat" role="img"></i>
         </h4>
     </footer>
 
@@ -439,49 +452,22 @@
                     class="fas fa-times cerrar " id="cerrar"></i>
             </button>
         </div>
-        <p id="parrafo_productos--agregados">2 producto(s) agregado(s)</p>
-        <div class="articulos_anadidos ">
-            
-            <article class="tarjeta_producto_agregado" data-id="2" data-nombre="ice grape">
-                <div class="contenedor_img">
-                    <img class="imagen" src="imagenes/ice grape.jpg" alt="liquido para vaper liquid ice grape" />
-                </div>
-                <div class="contenido_carrito_descripcion">
-                    <div class="contenedor_titulos">
-                        <h2>Ice Grape </h2> <button type="button" aria-label="elimiar producto del carrito"
-                            class="btn_eliminarproducto"><i class="far fa-trash-alt"></i></button>
-                    </div>
-                    <div>
-                        <div class="contenido_carrito_precio">
-                            <label for="cantidad_productos_agregados"> <input class="productos_agregados"
-                                    id="cantidad_productos_agregados" type=number value="1">
-                                unidades</label>
-                            <p class="precio">$2000</p>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <article class="tarjeta_producto_agregado" data-id="4" data-nombre="vaporesso" data-categoria="vapers"
-                data-precio="45000" data-rating="4">
-                <div class="contenedor_img">
-                    <img class="imagen" src="imagenes/vaporesso.jpg" alt="vaper vaporesso" />
-                </div>
-                <div class="contenido_carrito_descripcion">
-                    <div class="contenedor_titulos">
-                        <h2>Vaporesso</h2>
-                        <button type="button" aria-label="elimiar producto del carrito" class="btn_eliminarproducto"><i
-                                class="far fa-trash-alt"></i></button>
-                    </div>
-                    <div class="contenido_carrito_precio">
-                        <label for="cantidad_productos_agregados"> <input class="productos_agregados"
-                                id="cantidad_productos_agregados" type=number value="1">
-                            unidades</label>
-                        <p class="precio">$3000</p>
-                    </div>
-            </article>
+        <p class="parrafo-productos-agregados"><span class="contadorModalCarrito" > </span></p>
+        <div class="articulos_anadidos">
+         <table class="lista-carrito">
+             <thead>
+                 <tr>
+                     <th>Imagen</th>
+                     <th>Nombre</th>
+                     <th>Precio</th>
+                     <th>Cantidad</th>
+                     <th> </th>
+                 </tr>
+             </thead>
+             <tbody></tbody>
+         </table>
         </div>
-        <p class="subtotal_articulos">Subtotal $5000<span class="valor"></span></p>
+        <p class="subtotal_articulos">Subtotal<span class="valor"> 0 </span></p>
         <button type="button" aria-label="boton comprar productos" class="btn_comprar_carrito">COMPRAR</button>
         <button type="button" aria-label="boton vaciar carrito" class="btn_vaciar_carrito">VACIAR</button>
     </section>
@@ -527,7 +513,7 @@
             <div class="div_resumen_total">
                 <h4 class="resumen_carrito" id="resumen_carrito">Resumen</h4>
                 <div class="seccion_calculos">
-                    <p class="subtotal_carrito "> Subtotal <span class="contenedorDeValores" id=subtotal>$5000</span>
+                    <p class="subtotal_carrito "> Subtotal <span class="contenedorDeValores" id=subtotal></span>
                     </p>
                     <p class="textotc ocultar"> Recargo <span class="contenedorDeValores" id="recargo"></span></p>
                     <p class="textoDescuento ocultar">Descuento 10%<span class="contenedorDeValores"
@@ -550,8 +536,10 @@
             Estás por vaciar el carrito, ¿quieres continuar?
         </p>
         <div class="botones_modal">
-            <button type="button" class="btn_modal_novaciar" id="btnCancelar" aria-label="boton no vaciar carrito">CANCELAR</button>
-            <button type="button" class="btn_modal_vaciar" id="btnvaciarCarritoModalFinal" aria-label="boton vaciar carrito">VACIAR</button>
+            <button type="button" class="btn_modal_novaciar" id="btnCancelar"
+                aria-label="boton no vaciar carrito">CANCELAR</button>
+            <button type="button" class="btn_modal_vaciar" id="btnvaciarCarritoModalFinal"
+                aria-label="boton vaciar carrito">VACIAR</button>
         </div>
     </div>
     <script src="main.js"></script>
