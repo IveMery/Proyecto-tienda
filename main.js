@@ -1,5 +1,62 @@
+// carrito de compras lateral
+const carroDeComprasbtn = document.querySelector('.carroDecompras')
+const carrito_productos = document.querySelector('.carrito_productos')
+const xCerrarCarrito = document.querySelector('.cerrar')
+// contenedor checkout modal
+const cerrarCarro = document.querySelector('#cerrar')
+const overlay = document.querySelector('.overlay')
+const btn_comprar_carrito = document.querySelector('.btn_comprar_carrito')
+const contenedor_principal = document.querySelector('.contenedor_principal')
+const btn_seguir_compra = document.querySelector('.seguir_compra')
+const contenedor_tarjetas = document.querySelector('.contenedor_tarjetas')
+const tarjetasProductos = document.querySelectorAll('.tarjetasProductos')
+const descripcionProducto = document.querySelectorAll('.descripcion_producto')
+const btnVista_Grid = document.querySelector('#vista_grid')
+const btnVista_Lista = document.querySelector('#vista_lista')
+const infoProductoOcultar = document.querySelectorAll('.infoProductoOcultar')
+const body = document.getElementById('body')
+//modal vaciar carrito
+const botonVaciarCarro = document.querySelector('.btn_vaciar_carrito')
+const vaciaCarroModal = document.querySelector('.modal_vaciar_carrito')
+const limpiarCarrito = document.querySelector('.articulos_anadidos')
+const parrafoCarrito = document.querySelector('.parrafo-productos-agregados')
+const subtotalArticulosCarrito = document.querySelector('.subtotal_articulos')
+const cancelarVaciarCarrito = document.querySelector('#btnCancelar')
+const vaciarBotonModalFinal = document.querySelector('#btnvaciarCarritoModalFinal')
+//Variables y funciones seccion Filtros
+const filtroBusqueda = document.querySelector('#filtrar')
+const tarjetas = document.getElementsByClassName('tarjetas')
+const filtroRating = document.getElementsByClassName('review-filter')
+const filtroCategorias = document.getElementsByClassName('filtroCategorias')
+const checkboxes = document.querySelectorAll(".review-filter")
+const botonLimpiar = document.querySelector(".botonLimpiar")
 /*Mostrar cantidad de productos filtrados en la barra*/
 const mostrandoProductosFiltros = document.querySelector('.mostrando')
+
+//Calculo modal checkout
+const subtotalCheckout = document.querySelector("#subtotal")
+const metodoDePago = document.querySelectorAll(".metodoPago")
+const parrafoRecargo = document.querySelector("#recargo")
+const parrafoEnvio = document.querySelector("#parrafoEnvio")
+const parrafoDescuento = document.querySelector("#parrafoDescuento")
+const parrafoTotal = document.querySelector("#parrafoTotal")
+const radioCredito = document.querySelector(".radioCredito")
+const checkboxEnvio = document.querySelector(".checkboxEnvio")
+const checkboxDescuento = document.querySelector(".checkboxdescuento")
+const radioDebito = document.querySelector(".RadioDebito")
+// anadir Productos al carrito se modifica el numero
+const numero = document.querySelector(`#numero`);
+const btnCompra = document.querySelectorAll(`.btn_Compra`);
+const contadorModalCarrito = document.querySelector('.contadorModalCarrito')
+let articulosCarrito = []
+let precio;
+const contenedorTarjetas = document.querySelector('.contenedor_tarjetas')
+const listaCarrito = document.querySelector('.lista-carrito tbody')
+const subtotalCarrito = document.querySelector(".valor")
+const tarjetaProductoAgregado = document.querySelectorAll('.tarjeta_producto_agregado')
+
+let sumarSubtotal;
+
 const mostrandoCantidadDeProductosFiltrados = () => {
   let cantidad = 0
   for (const tarjeta of tarjetas) {
@@ -10,28 +67,150 @@ const mostrandoCantidadDeProductosFiltrados = () => {
   mostrandoProductosFiltros.textContent = `Mostrando ${cantidad} productos(s) de ${tarjetas.length}`
 }
 
-// anadir Productos al carrito se modifica el numero
-const numero = document.querySelector(`#numero`);
-const btnCompra = document.querySelectorAll(`.btn_Compra`);
-let cont = 2;
-const agregarProductoAlCarrito = () => {
-  for (let compras of btnCompra) {
-    compras.onclick = () => {
-      numero.textContent = cont++;
-    }
+const contadorAgregarProducto = () => {
+  numero.textContent = articulosCarrito.length
+}
+const agregarProducto = (e) => {
+
+  if (e.target.classList.contains('btn_Compra')) {
+    //cuando identifico al boton  y la tarjeta del producto para tener acceso a 
+    //los datos del producto ,image,nombre,precio,descripcion
+    //  console.log(e.target.parentElement.parentElement);
+    const productoSeleccionado = e.target.parentElement.parentElement
+    leerDatosProductos(productoSeleccionado)
+  }
+  contadorAgregarProducto()
+  sumarSubtotal = articulosCarrito.reduce((sum, articulosCarrito) => {
+    return sum + Number(articulosCarrito.precio) * Number(articulosCarrito.cantidad)
+  }, 0)
+  precio = sumarSubtotal
+  subtotalCarrito.textContent = ` $ ${precio}`
+  console.log(sumarSubtotal);
+  subtotalCheckout.textContent = ` $ ${precio}`
+  obtenerTotal()
+}
+
+//leee el contenido del html al que le dimos click y extrae la informacion del curso
+
+const leerDatosProductos = (productoSeleccionado) => {
+  // console.log(productoSeleccionado);
+
+  const articulos = {
+    imagen: productoSeleccionado.querySelector('.producto').src,
+    nombre: productoSeleccionado.querySelector('.titulos_productos').textContent,
+    precio: productoSeleccionado.querySelector('button').getAttribute('data-precio'),
+    id: productoSeleccionado.querySelector('button').getAttribute('data-id'),
+    cantidad: 1
+  }
+
+  // console.log(articulos.imagen, articulos.nombre, articulos.precio, articulos.id);
+  console.log(articulos.precio);
+  //Agrega elementos al arreglo de carrito
+  //tambien puede ser un some que me devuelve true o false
+  const existe = articulosCarrito.some(articulo => articulo.id === articulos.id)
+  // console.log(existe);
+  if (existe) {
+    //actualizo la cantidad
+    const productos = articulosCarrito.map(producto => {
+      return producto.id === articulos.id ? {...producto, cantidad:producto.cantidad+1} : producto
+      // if (producto.id === articulos.id) {
+      //   producto.cantidad += 1
+      //   console.log(producto);
+      //   return producto
+      // } else {
+      //   return producto
+      // }
+    })
+    articulosCarrito = [...productos]
+
+
+
+  } else {
+    // articulosCarrito.push(articulos)
+    //envez de push copio lo que tenga el array y agrego nuevos elementos
+    articulosCarrito = [...articulosCarrito, articulos]
+    console.log(articulosCarrito);
+
+  }
+
+  // console.log(articulosCarrito.length);
+  carritoHTML()
+}
+
+//cargar productos del carrito al html
+const carritoHTML = () => {
+  limpiarHTML()
+  articulosCarrito.forEach(articulo => {
+    const { imagen, nombre, precio, id, cantidad } = articulo
+    const listaProductos = document.createElement('tr')
+    listaProductos.innerHTML = `
+    <td><img src="${imagen}" width="50px"/></td>
+    <td>${nombre}</td>
+    <td>$${precio}</td>
+    <td>${cantidad}</td>
+    <td>
+    <button class="btn-danger" data-id="${id}">X</button>
+    </td>
+    `
+    //agrego el template al html del carrito de compras en tbody busco su contenedor
+    listaCarrito.appendChild(listaProductos)
+  })
+}
+
+const limpiarHTML = () => {
+  while (listaCarrito.firstChild) {//se verdadero osea que exista un elemento dentro del contednedor
+    listaCarrito.removeChild(listaCarrito.firstChild)//vamos a remover ese primer elemento
   }
 }
-agregarProductoAlCarrito()
 
-// variables vista grid y vita lista
-const contenedor_tarjetas = document.querySelector('.contenedor_tarjetas')
-const tarjetasProductos = document.querySelectorAll('.tarjetasProductos')
-const descripcionProducto = document.querySelectorAll('.descripcion_producto')
-const btnVista_Grid = document.querySelector('#vista_grid')
-const btnVista_Lista = document.querySelector('#vista_lista')
-const infoProductoOcultar = document.querySelectorAll('.infoProductoOcultar')
-const body = document.getElementById('body')
+let restarSubtotal;
+const eliminarProducto = (e) => {
+  //delegacion
+  const botonEliminar = e.target.classList.contains('btn-danger')
+  if (botonEliminar) {
+    const productId = e.target.getAttribute('data-id')//para obtener la data del producto
+    //eliminar del arreglo
+    articulosCarrito = articulosCarrito.filter(producto => producto.id !== productId)
+    console.log(articulosCarrito);
+  }
+  carritoSinProductos()
+  contadorAgregarProducto()
+  restarSubtotal = articulosCarrito.reduce((res, articulosCarrito) => {
+    return res + Number(articulosCarrito.precio)
+  }, 0)
+  precio = restarSubtotal
+  subtotalCarrito.textContent = ` $ ${precio}`
+  subtotalCheckout.textContent = ` $ ${precio}`
 
+  console.log(restarSubtotal);
+  console.log(precio);
+  obtenerTotal()
+  //dibujo nuevamente el html
+  carritoHTML()
+}
+
+const vaciarCarrito = () => {
+  articulosCarrito = []
+  carritoSinProductos()
+  contadorAgregarProducto()
+  subtotalCarrito.textContent = ` $ ${0}`
+  //limpiamos el html
+  limpiarHTML()
+  console.log(articulosCarrito);
+}
+
+const cargarListeners = () => {
+  //cuando agrego un producto al carrito
+  contenedorTarjetas.addEventListener('click', agregarProducto)
+  //cuando elimino un producto del carrito
+  listaCarrito.addEventListener('click', eliminarProducto)
+
+  vaciarBotonModalFinal.addEventListener('click', vaciarCarrito)
+
+
+}
+cargarListeners()
+ 
 //funcion vista grid y vista lista
 const contenedor_lista = () => {
   for (let productos of tarjetasProductos) {
@@ -74,32 +253,31 @@ btnVista_Grid.onclick = () => {
   vista_grid()
 }
 
-// carrito de compras lateral
-const carroDeComprasbtn = document.querySelector('.carroDecompras')
-const carrito_productos = document.querySelector('.carrito_productos')
-const xCerrarCarrito = document.querySelector('.cerrar')
-// contenedor checkout modal
-const cerrarCarro = document.querySelector('#cerrar')
-const overlay = document.querySelector('.overlay')
-const btn_comprar_carrito = document.querySelector('.btn_comprar_carrito')
-const contenedor_principal = document.querySelector('.contenedor_principal')
-const btn_seguir_compra = document.querySelector('.seguir_compra')
+const carritoSinProductos = () => {
+
+  if (articulosCarrito.length === 0) {
+    parrafoCarrito.textContent = 'No tienes productos en el carrito, ¡agrega algunos!'
+    btn_comprar_carrito.classList.add('hidden')
+    botonVaciarCarro.classList.add('hidden')
+  }
+  else {
+    parrafoCarrito.textContent = ''
+    btn_comprar_carrito.classList.remove('hidden')
+    botonVaciarCarro.classList.remove('hidden')
+  }
+}
 
 carroDeComprasbtn.onclick = () => {
   carrito_productos.classList.toggle('ocultar_modal')
   overlay.classList.remove('hidden')
   body.classList.add('no-scroll')
+  carritoSinProductos()
 }
 
 cerrarCarro.onclick = () => {
   carrito_productos.classList.toggle('ocultar_modal')
   body.classList.remove('no-scroll')
   overlay.classList.add('hidden')
-  limpiarCarrito.classList.remove('hidden')
-  parrafoCarrito.textContent = '2 producto(s) agregado(s)'
-  btn_comprar_carrito.classList.remove('hidden')
-  botonVaciarCarro.classList.remove('hidden')
-  subtotalArticulosCarrito.classList.remove('hidden')
 }
 
 // abrir modal checkout  al apretar el botoncomprar
@@ -114,15 +292,8 @@ btn_seguir_compra.onclick = () => {
   overlay.classList.add('hidden')
   overlay.classList.remove('overlay-3')
   body.classList.remove('no-scroll')
+
 }
-//modal vaciar carrito
-const botonVaciarCarro = document.querySelector('.btn_vaciar_carrito')
-const vaciaCarroModal = document.querySelector('.modal_vaciar_carrito')
-const limpiarCarrito = document.querySelector('.articulos_anadidos')
-const parrafoCarrito = document.querySelector('#parrafo_productos--agregados')
-const subtotalArticulosCarrito = document.querySelector('.subtotal_articulos')
-const cancelarVaciarCarrito = document.querySelector('#btnCancelar')
-const vaciarBotonModalFinal = document.querySelector('#btnvaciarCarritoModalFinal')
 
 botonVaciarCarro.onclick = () => {
   vaciaCarroModal.classList.remove('hidden')
@@ -130,13 +301,9 @@ botonVaciarCarro.onclick = () => {
 }
 
 vaciarBotonModalFinal.onclick = () => {
-  vaciaCarroModal.classList.add('hidden')
+
   overlay.classList.remove('overlay-3')
-  limpiarCarrito.classList.add('hidden')
-  parrafoCarrito.textContent = 'No tienes productos en el carrito, ¡agrega algunos!'
-  btn_comprar_carrito.classList.add('hidden')
-  botonVaciarCarro.classList.add('hidden')
-  subtotalArticulosCarrito.classList.add('hidden')
+  vaciaCarroModal.classList.add('hidden')
 }
 
 cancelarVaciarCarrito.onclick = () => {
@@ -159,20 +326,8 @@ btnCerrarFiltros.onclick = () => {
   overlay.classList.add('hidden')
   body.classList.remove('no-scroll')
 }
-//Calculo modal checkout
-const mostrarSubtotal = document.querySelector("#subtotal")
-const mostrarSubtotalNumero = Number(mostrarSubtotal)
-const metodoDePago = document.querySelectorAll(".metodoPago")
-const parrafoRecargo = document.querySelector("#recargo")
-const parrafoEnvio = document.querySelector("#parrafoEnvio")
-const parrafoDescuento = document.querySelector("#parrafoDescuento")
-const parrafoTotal = document.querySelector("#parrafoTotal")
-const radioCredito = document.querySelector(".radioCredito")
-const checkboxEnvio = document.querySelector(".checkboxEnvio")
-const checkboxDescuento = document.querySelector(".checkboxdescuento")
-const radioDebito = document.querySelector(".RadioDebito")
-const precio = 5000
-mostrarSubtotal.textContent = `$ ${precio}`
+
+// subtotalCheckout.textContent = `$ ${precio}`
 
 for (let metodo of metodoDePago) {
   metodo.oninput = () => {
@@ -193,6 +348,7 @@ const recargoCredito = () => {
 const tarjetaDescuento = () => {
   descuento = (precio * 10) / 100
   parrafoDescuento.textContent = `$ ${descuento}`
+
   return descuento
 }
 //Gasto ennvio
@@ -224,11 +380,13 @@ const obtenerTotal = () => {
   let TotalFinalCompra = precio + envio + recargo - descuento
   parrafoTotal.textContent = `$ ${TotalFinalCompra}`
   return TotalFinalCompra
+
 }
 //Mostrar parrafos segun seleccion del usuario en el modal checkout
 const textoCredito = document.querySelector('.textotc')
 const textoDescuento = document.querySelector('.textoDescuento')
 const textoEnvio = document.querySelector('.textoEnvio')
+
 radioDebito.onclick = () => {
   textoCredito.classList.add('ocultar')
 }
@@ -243,13 +401,6 @@ checkboxEnvio.onclick = () => {
   textoEnvio.classList.toggle('ocultar')
 }
 
-//Variables y funciones seccion Filtros
-const filtroBusqueda = document.querySelector('#filtrar')
-const tarjetas = document.getElementsByClassName('tarjetas')
-const filtroRating = document.getElementsByClassName('review-filter')
-const filtroCategorias = document.getElementsByClassName('filtroCategorias')
-const checkboxes = document.querySelectorAll(".review-filter")
-const botonLimpiar = document.querySelector(".botonLimpiar")
 
 const pasaFiltrosInput = (tarjeta) => {
   if (hayAlgoEscritoEnElInput()) {
